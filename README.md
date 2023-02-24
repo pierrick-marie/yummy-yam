@@ -1,2 +1,4 @@
-# yummy-yam
-Hugo server theme
+Yummy Yam
+============================
+
+A Hugo server theme
