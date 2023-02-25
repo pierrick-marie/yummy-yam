@@ -8,5 +8,15 @@ footer {
 	border-top: 2px;
 	border-style: solid;
 	border-color: $dark;
+
+	display: flex;
+	justify-content: space-between;
 }
 
+footer a {
+	text-decoration: underline;
+}
+
+footer p {
+	font-size: 0.85em;
+}
