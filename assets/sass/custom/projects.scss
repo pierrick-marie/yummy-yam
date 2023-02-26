@@ -15,7 +15,7 @@
 	justify-content: space-around;
 }
 
-.project-description {
+.projects-description {
 
 	background-color: $info;
 	padding: 15px;
@@ -31,7 +31,7 @@
 	width: 70%;
 }
 
-.project-description a {
+.projects-description a {
 	color: $secondary;
 	text-decoration: underline;
 	text-align: justify;
@@ -39,7 +39,7 @@
 
 $snippet-padding: 2em;
 
-.project-description .snippet {
+.projects-description .snippet {
 
 	padding-top: $snippet-padding;
 	padding-bottom: $snippet-padding;
