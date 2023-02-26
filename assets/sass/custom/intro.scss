@@ -1,20 +1,3 @@
-.intro {
-	// padding-top: 15vh;
-	height: 100vh;
-}
-
-.introduction {
-	width: 95%;
-
-	margin-left: auto;
-	margin-right: auto;
-
-	padding-top: 5vh;
-}
-
-.introduction p {
-	font-style: italic;
-}
 
 .paragraph {
 	display: flex;
@@ -24,17 +7,8 @@
 
 	margin-left: auto;
 	margin-right: auto;
-}
 
-.paragraph p {
-	margin-top: auto;
-	margin-bottom: auto;
-}
+	font-style: italic;
 
-#par-1 {
-	width: 70%;
-}
-
-#par-2 {
 	width: 80%;
 }

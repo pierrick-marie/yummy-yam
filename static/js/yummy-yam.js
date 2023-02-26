@@ -14,13 +14,19 @@ $(document).ready(function () {
 
 	setupAvatarRotations();
 
-	setupStarsInTitlesH1();
+	setupStars();
 });
 
-function setupStarsInTitlesH1() {
+function setupStars() {
 
+	// In titles h1
 	$(`<p class="star">⚝</p>`).insertBefore('.content h1');
 	$(`<p class="star">⚝</p>`).insertAfter('.content h1');
+
+	// In paragraph p
+	$('.paragraph').prepend(`<p class="star">⚝</p>`);
+	$('.paragraph').append(`<p class="star">⚝</p>`);
+	// $(`<p class="star">⚝</p>`).insertAfter('.paragraph p');
 }
 
 /**
