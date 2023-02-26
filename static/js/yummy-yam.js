@@ -14,9 +14,14 @@ $(document).ready(function () {
 
 	setupAvatarRotations();
 
-	setupStars();
+	setupStars();  
+
+	setupNavArrow() 
 });
 
+/**
+ * Add stars in titles and paragraphs
+ */
 function setupStars() {
 
 	// In titles h1
@@ -26,7 +31,13 @@ function setupStars() {
 	// In paragraph p
 	$('.paragraph').prepend(`<p class="star">⚝</p>`);
 	$('.paragraph').append(`<p class="star">⚝</p>`);
-	// $(`<p class="star">⚝</p>`).insertAfter('.paragraph p');
+}
+
+/**
+ * Add down arrow to navigate in main page
+ */
+function setupNavArrow() {
+	$('.arrow').html('⮛<br>⮛');
 }
 
 /**
