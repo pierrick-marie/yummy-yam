@@ -1,5 +1,15 @@
-.content {
-	height: 100vh;
+.title-h1 {
+	text-align: center;
+	padding-top: 5vh;
+}
+
+.title-h1 h1 {
+	display: inline;
+	text-shadow: 0 0 2px black;
+
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	text-align: center;
 }
 
 a {
@@ -13,27 +23,12 @@ a:hover {
 	color: $dark;
 }
 
-.body h1 {
-	padding-top: 5vh;
-	padding-bottom: 5vh;
-	text-align: center;
-}
-
 .star {
 	display: inline;
 	text-shadow: 1px 1px 0.2em black;
 
 	padding-left: 20px;
 	padding-right: 20px;
-}
-
-.title-h1 {
-	text-align: center;
-}
-
-.title-h1 h1 {
-	display: inline;
-	text-shadow: 0 0 2px black;
 }
 
 .error-404 {
