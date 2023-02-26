@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-<div class="body text-center">
+<div class="content text-center">
 	
 	<section class="intro">
 		{{ .Content }} <!-- _index.html -->
 	</section>
 
 	{{ range .Pages.ByWeight }} <!-- All other content -->
-		<section id="{{ .Title }}">
+		<section id="{{ .File.BaseFileName }}">
 			{{ .Content }}
 		</section>
 	{{ end }}

@@ -13,7 +13,15 @@ $(document).ready(function () {
 	scrollFunction();	// call function after loading page
 
 	setupAvatarRotations();
+
+	setupStarsInTitlesH1();
 });
+
+function setupStarsInTitlesH1() {
+
+	$(`<p class="star">⚝</p>`).insertBefore('.content h1');
+	$(`<p class="star">⚝</p>`).insertAfter('.content h1');
+}
 
 /**
  * Setup avatar rotations:

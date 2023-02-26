@@ -1,15 +1,24 @@
-.title-h1 {
-	text-align: center;
-	padding-top: 5vh;
+.content {
+	background-image: url("../img/background.png");
+	background-color: #fff; /* bootstrap: $white */
+	background-repeat: repeat-y;
+	background-size: contain;
+
+	margin-top: navbarHeight(); /* @see ./header.css */
+	color: #343a40; /* main.scss: $dark -> $gray-800 */
 }
 
-.title-h1 h1 {
+.content h1 {
 	display: inline;
 	text-shadow: 0 0 2px black;
 
 	padding-top: 5vh;
 	padding-bottom: 5vh;
 	text-align: center;
+}
+
+.content > section {
+	padding-top: 10vh;
 }
 
 a {
@@ -30,15 +39,6 @@ a:hover {
 	padding-left: 20px;
 	padding-right: 20px;
 }
-
-.error-404 {
-	height: 100vh;
-	width: 100%;
-	text-align: center;
-	padding-top: 20vh;
-	background-size: cover;
-}
-
 
 .hide {
 	display: none;

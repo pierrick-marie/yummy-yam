@@ -4,8 +4,7 @@
 		<div id="navbar-content" class="m-0">
 
 			{{ range .Pages.ByWeight }} <!-- All content pages -->
-				{{ $s := .RelPermalink }}
-				<a class="navbar-link" href="#{{ replace $s "/" "" }}">
+				<a class="navbar-link" href="#{{ .File.BaseFileName }}">
 					<h3 class="h5 m-0">{{ .Title | title }}</h3>
 				</a>	
 			{{ end }}
