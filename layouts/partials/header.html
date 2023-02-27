@@ -4,9 +4,8 @@
 		<div id="navbar-content" class="m-0">
 
 			{{ range .Pages.ByWeight }} <!-- All content pages -->
-				{{ $s := .RelPermalink }}
-				<a class="navbar-link" href="#{{ replace $s "/" "" }}">
-					<h3 class="h5 m-0">{{ .Title }}</h3>
+				<a class="navbar-link" href="#{{ .File.BaseFileName }}">
+					<h3 class="h5 m-0">{{ .Title | title }}</h3>
 				</a>	
 			{{ end }}
 
@@ -21,7 +20,7 @@
 			</button>
 
 			<a class="navbar-avatar p-0" href="." rel="author">
-				<img class="avatar-img" alt="Avatar {{ $.Site.Params.author }}" src="./img/avatar.png">
+				<img class="avatar-img" alt="Avatar {{ $.Site.Params.author }}" src="./img/theme/avatar.png">
 			</a>
 
 			<a id="navbar-title" href=".">

@@ -1,17 +1,15 @@
 /* - BEGIN: Arrows - */
 
-.arrow {
+.yummy-yam-arrow {
 	transition: color 400ms;
 	color: $dark;
-}
 
-.arrow:hover {
-	color: $light;
-}
-
-#intro .arrow {
 	display: inline-block;
 	padding-top: 10vh;
+}
+
+.yummy-yam-arrow:hover {
+	color: $light;
 }
 
 /* - END: Arrows - */

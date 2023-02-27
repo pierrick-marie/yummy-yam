@@ -23,29 +23,34 @@ $jumbo-up: 5.5em;
 		font-size: $large;
 	}
 
-	.arrow {
+	.yummy-yam-arrow {
 		font-size: $large;
 	}
 
 	p {
+		margin-top: $huge;
+		font-size: $normal-huge;
+	}
+
+	.projects-description {
+		margin: 0;
 		font-size: $normal;
 	}
 
-	.paragraph p {
-		font-size: $normal-huge;
+	footer p {
+		padding: 0;
+		margin: 0;
+		font-size: 0.85em;
 	}
 
 	#technologies li {
 		font-size: $normal-large;
 	}
 
-	#contact p {
-		font-size: $normal-large;
-	}
-
 	.star {
 		font-size: $large;
 	}
+
 }
 
 @media screen and (min-width: 2000px) {
@@ -70,11 +75,8 @@ $jumbo-up: 5.5em;
 		font-size: $huge;
 	}
 
-	p {
-		font-size: $larger;
-	}
-
-	#contact p {
+	.content p {
+		margin-top: $jumbo;
 		font-size: $larger;
 	}
 
@@ -86,7 +88,14 @@ $jumbo-up: 5.5em;
 		font-size: $jumbo;
 	}
 
-	.arrow {
+	.yummy-yam-arrow {
 		font-size: $jumbo;
 	}
+
+	footer p {
+		padding: 0;
+		margin: 0;
+		font-size: 1em;
+	}
+
 }

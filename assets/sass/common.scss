@@ -1,0 +1,62 @@
+.content {
+	background-image: url("../img/theme/background.png");
+	background-color: #fff; /* bootstrap: $white */
+	background-repeat: repeat-y;
+	background-size: contain;
+
+	margin-top: navbarHeight(); /* @see ./header.css */
+	color: #343a40; /* main.scss: $dark -> $gray-800 */
+}
+
+.yummy-yam-title {
+	display: inline;
+	text-shadow: 0 0 2px black;
+
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	text-align: center;
+}
+
+.content > section {
+	padding-top: 10vh;
+	height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: $dark;
+	transition: 500ms;
+	border-bottom: 2px solid transparent;
+}
+
+a:hover {
+	color: $dark;
+}
+
+.star {
+	display: inline;
+	text-shadow: 1px 1px 0.2em black;
+
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.hide {
+	display: none;
+}
+
+
+.yummy-yam-paragraph {
+	display: flex;
+	justify-content: space-around;
+
+	padding-top: 10vh;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	font-style: italic;
+
+	width: 80%;
+}
+
