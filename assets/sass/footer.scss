@@ -1,8 +1,18 @@
+$footer-height: 45px;
+$footer-padding: 15px;
+
 footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: $footer-height;
+	
 	background-color: $primary;
 
-	padding: 15px;
-	padding-bottom: 0;
+	padding-left: $footer-padding;
+	padding-right: $footer-padding;
+	padding-top: $footer-padding;
 
 	border: 0;
 	border-top: 2px;
@@ -17,6 +27,20 @@ footer a {
 	text-decoration: underline;
 }
 
-footer p {
-	font-size: 0.85em;
+.corner-image {
+	filter: drop-shadow(0 0 1rem $dark);
+	position: fixed;
+	bottom: $footer-height;
+}
+
+.bottom-left {
+	left: 15px;
+}
+
+.bottom-right {
+	right: 15px;
+}
+
+.large {
+	width: 6%;
 }

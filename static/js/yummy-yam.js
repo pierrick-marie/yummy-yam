@@ -16,8 +16,20 @@ $(document).ready(function () {
 
 	setupStars();  
 
-	setupNavArrow() 
+	setupNavArrow();
+
+	setupCornerImages();
 });
+
+/**
+ * Add small or large background corner images
+ */
+function setupCornerImages() {
+
+	$('.yummy-yam-corner-images').append(`
+		<img class="corner-image bottom-left large" alt="corner image bottom left" src="./img/theme/corner-left.png">
+		<img class="corner-image bottom-right large" alt="corner image bottom right" src="./img/theme/corner-right.png">`);
+}
 
 /**
  * Add stars in titles and paragraphs
@@ -25,19 +37,15 @@ $(document).ready(function () {
 function setupStars() {
 
 	// In titles h1
-	$(`<p class="star">⚝</p>`).insertBefore('.content h1');
-	$(`<p class="star">⚝</p>`).insertAfter('.content h1');
-
-	// In paragraph p
-	$('.paragraph').prepend(`<p class="star">⚝</p>`);
-	$('.paragraph').append(`<p class="star">⚝</p>`);
+	$(`<p class="star">⚝</p>`).insertBefore('.yummy-yam-title');
+	$(`<p class="star">⚝</p>`).insertAfter('.yummy-yam-title');
 }
 
 /**
  * Add down arrow to navigate in main page
  */
 function setupNavArrow() {
-	$('.arrow').html('⮛<br>⮛');
+	$('.yummy-yam-arrow').html('⮛<br>⮛');
 }
 
 /**

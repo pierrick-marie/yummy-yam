@@ -1,5 +1,5 @@
 .content {
-	background-image: url("../img/background.png");
+	background-image: url("../img/theme/background.png");
 	background-color: #fff; /* bootstrap: $white */
 	background-repeat: repeat-y;
 	background-size: contain;
@@ -8,7 +8,7 @@
 	color: #343a40; /* main.scss: $dark -> $gray-800 */
 }
 
-.content h1 {
+.yummy-yam-title {
 	display: inline;
 	text-shadow: 0 0 2px black;
 
@@ -44,3 +44,19 @@ a:hover {
 .hide {
 	display: none;
 }
+
+
+.yummy-yam-paragraph {
+	display: flex;
+	justify-content: space-around;
+
+	padding-top: 10vh;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	font-style: italic;
+
+	width: 80%;
+}
+
