@@ -3,9 +3,15 @@
 	<div id="navbarToggleExternalContent" class="collapse">
 		<div id="navbar-content" class="m-0">
 
-			{{ range .Pages.ByWeight }} <!-- All content pages -->
-				<a class="navbar-link" href="#{{ .File.BaseFileName }}">
-					<h3 class="h5 m-0">{{ .Title | title }}</h3>
+			{{ if ( not $.IsHome ) }}
+				<a class="navbar-link" href="{{ $.Site.BaseURL }}">
+					<h3 class="h5 m-0">Accueil</h3>
+				</a>
+			{{ end }}
+
+			{{ range .Site.Menus.main.ByWeight }} 
+				<a class="navbar-link" href="{{ $.Site.BaseURL }}{{ .URL }}">
+					<h3 class="h5 m-0">{{ .Name }}</h3>
 				</a>	
 			{{ end }}
 
@@ -19,11 +25,11 @@
 				<span id="navbar-toggler-icon" class="fa-solid fa-bars"></span>
 			</button>
 
-			<a class="navbar-avatar p-0" href="." rel="author">
-				<img class="avatar-img" alt="Avatar {{ $.Site.Params.author }}" src="./img/theme/avatar.png">
+			<a class="navbar-avatar p-0" href="{{ $.Site.BaseURL }}" rel="author">
+				<img class="avatar-img" alt="Avatar {{ $.Site.Params.author }}" src="{{ $.Site.BaseURL }}/img/theme/avatar.png">
 			</a>
 
-			<a id="navbar-title" href=".">
+			<a id="navbar-title" href="{{ $.Site.BaseURL }}">
 				<h1 class="h4 m-0">{{ $.Site.Params.author }}</h1>
 			</a>
 		</div>

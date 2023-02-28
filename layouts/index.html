@@ -10,12 +10,18 @@
 	</section>
 
 	{{ range .Pages.ByWeight }} <!-- All other content -->
-		<section id="{{ .File.BaseFileName }}">
-			<!-- BLOCK: add starts around the title -->
-			<h1 class="yummy-yam-title">{{ .Title | title }}</h1>
 
-			{{ .Content }}
-		</section>
+		{{ if ( gt .Weight 0 ) }}
+
+			<section id="{{ .File.BaseFileName }}">
+				<!-- BLOCK: add starts around the title -->
+				<h1 class="yummy-yam-title">{{ .Title | title }}</h1>
+
+				{{ .Content }}
+			</section>
+
+		{{ end }}
+
 	{{ end }}
 
 </div>

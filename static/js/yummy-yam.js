@@ -26,9 +26,11 @@ $(document).ready(function () {
  */
 function setupCornerImages() {
 
+	var origin = window.location.origin;
+
 	$('.yummy-yam-corner-images').append(`
-		<img class="corner-image bottom-left large" alt="corner image bottom left" src="./img/theme/corner-left.png">
-		<img class="corner-image bottom-right large" alt="corner image bottom right" src="./img/theme/corner-right.png">`);
+		<img class="corner-image bottom-left large" alt="corner image bottom left" src="${origin}/img/theme/corner-left.png">
+		<img class="corner-image bottom-right large" alt="corner image bottom right" src="${origin}/img/theme/corner-right.png">`);
 }
 
 /**
