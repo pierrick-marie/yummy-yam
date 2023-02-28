@@ -13,5 +13,5 @@ You can find a demonstration of Yummy Yam at this address: https://pierrick-mari
 
 # Features
 
-1. A static single main page
-2. Dynamic pages for blog posts
+1. A static single main page: **almost done!**
+2. Dynamic pages for blog posts: **under development!**
