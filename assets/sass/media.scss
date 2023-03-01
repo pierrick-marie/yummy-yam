@@ -1,4 +1,4 @@
-$small: 0.85em;
+$small: 0.7em;
 
 $normal: 1em;
 $normal-large: 1.2em;
@@ -27,9 +27,88 @@ $jumbo-up: 5.5em;
 	margin-right: 0;
 }
 
-@media screen and (max-width: 1999px) {
+@media screen and (max-width: 500px) {
+	.navbar-avatar {
+		width: 15%;
+		height: auto;
+
+		margin-left: auto;
+		margin-right: auto;
+		transform: translate(-60%, 0);
+	}
+
+	.navbar-link {
+		i {
+			display: none;
+		}
+	}
+	
+	.navbar-avatar {
+		bottom: -10px;
+	}
+
+	.navbar-avatar img {
+		width: 100%;
+		height: auto;
+
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#navbar-title h4 {
+		font-size: $normal;
+	}
+
+	.navbar-toggler {
+		font-size: $normal;
+		border-radius: 5px;
+	}
+	#navbar-toggler-icon {
+		padding: 0;
+	}
+
+	.yummy-yam-title {
+		font-size: $normal;
+		text-shadow: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.main-section {
+		padding-top: 1vh;
+		height: 100vh;
+
+		p {
+			margin-top: 3vh;
+			margin-bottom: 3vh;
+		}
+	}
+
+	p {
+		margin-top: $normal;
+		font-size: $small;
+
+	}
+}
+
+@media screen and (min-width: 501px) and (max-width: 1999px) {
 	#navbar-title h4 {
 		font-size: $large;
+	}
+
+	.navbar-avatar {
+		bottom: -20px;
+	}
+
+	.main-section {
+		padding-top: 10vh;
+		height: 100vh;
+	}
+
+	.yummy-yam-title {
+		text-shadow: 0 0 2px black;
+		padding-top: 5vh;
+		padding-bottom: 5vh;
 	}
 
 	.navbar-link h5 {
@@ -54,10 +133,18 @@ $jumbo-up: 5.5em;
 		font-size: $normal;
 	}
 
-	footer p {
-		padding: 0;
-		margin: 0;
-		font-size: $small;
+	$footer-height: 30px;
+	$footer-padding: 5px;
+	footer {
+		height: $footer-height;
+		p {
+			padding: $footer-padding;
+			margin: 0;
+			font-size: $small;
+		}
+	}
+	.corner-image {
+		bottom: $footer-height;
 	}
 
 	#technologies li {
@@ -71,8 +158,20 @@ $jumbo-up: 5.5em;
 }
 
 @media screen and (min-width: 2000px) {
-	#navbar-title h4 {
-		font-size: $larger;
+	.main-section {
+		padding-top: 5vh;
+	}
+
+	#navbar-title {
+		margin-right: 1%;
+		
+		h4 {
+			font-size: $larger;
+		}
+	}
+
+	.navbar-avatar {
+		bottom: -50px;
 	}
 
 	.navbar-link h5 {
@@ -82,6 +181,10 @@ $jumbo-up: 5.5em;
 	.navbar-toggler {
 		font-size: $huge;
 		border-radius: 20px;
+		margin-left: 1%;
+	}
+	#navbar-toggler-icon {
+		padding: 20px;
 	}
 
 	h1 {
@@ -109,10 +212,18 @@ $jumbo-up: 5.5em;
 		font-size: $jumbo;
 	}
 
-	footer p {
-		padding: 0;
-		margin: 0;
-		font-size: $normal;
+	$footer-height: 55px;
+	$footer-padding: 10px;
+	footer {
+		height: $footer-height;
+		p {
+			padding: $footer-padding;
+			margin: 0;
+			font-size: $normal-huge;
+		}
+	}
+	.corner-image {
+		bottom: $footer-height;
 	}
 
 	.metadata-article {

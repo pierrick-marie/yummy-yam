@@ -1,18 +1,10 @@
-$footer-height: 45px;
-$footer-padding: 15px;
-
 footer {
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: $footer-height;
 	
 	background-color: $primary;
-
-	padding-left: $footer-padding;
-	padding-right: $footer-padding;
-	padding-top: $footer-padding;
 
 	border: 0;
 	border-top: 2px;
@@ -23,18 +15,9 @@ footer {
 	justify-content: space-between;
 }
 
-// footer a {
-// 	text-decoration: underline;
-// }
-
-// footer a:hover {
-// 	text-decoration: none;
-// }
-
 .corner-image {
 	filter: drop-shadow(0 0 1rem $shadow);
 	position: fixed;
-	bottom: $footer-height;
 }
 
 .bottom-left {
