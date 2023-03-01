@@ -1,3 +1,5 @@
+$small: 0.85em;
+
 $normal: 1em;
 $normal-large: 1.2em;
 $normal-huge: 1.5em;
@@ -43,6 +45,10 @@ $jumbo-up: 5.5em;
 		font-size: $normal-large;
 	}
 
+	.metadata-article {
+		font-size: $small;
+	}
+
 	.projects-description {
 		margin: 0;
 		font-size: $normal;
@@ -51,7 +57,7 @@ $jumbo-up: 5.5em;
 	footer p {
 		padding: 0;
 		margin: 0;
-		font-size: 0.85em;
+		font-size: $small;
 	}
 
 	#technologies li {
@@ -106,7 +112,11 @@ $jumbo-up: 5.5em;
 	footer p {
 		padding: 0;
 		margin: 0;
-		font-size: 1em;
+		font-size: $normal;
+	}
+
+	.metadata-article {
+		font-size: $normal;
 	}
 
 }

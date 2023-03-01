@@ -38,6 +38,8 @@ function setupCornerImages() {
  */
 function setupStars() {
 
+	$('.list-articles h1').addClass('yummy-yam-title');
+
 	// In titles h1
 	$(`<p class="star">⚝</p>`).insertBefore('.yummy-yam-title');
 	$(`<p class="star">⚝</p>`).insertAfter('.yummy-yam-title');

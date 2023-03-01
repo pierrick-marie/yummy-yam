@@ -2,7 +2,7 @@
 
 <div class="content text-center">
 	
-	<section> <!-- _index.html -->
+	<section class="main-section"> <!-- _index.html -->
 		<!-- BLOCK: add starts around the title -->
 		<h1 class="yummy-yam-title">{{ .Title | title }}</h1>
 
@@ -13,7 +13,7 @@
 
 		{{ if ( gt .Weight 0 ) }}
 
-			<section id="{{ .File.BaseFileName }}">
+			<section id="{{ .File.BaseFileName }}" class="main-section">
 				<!-- BLOCK: add starts around the title -->
 				<h1 class="yummy-yam-title">{{ .Title | title }}</h1>
 
