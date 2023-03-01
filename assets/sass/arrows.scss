@@ -1,17 +1,19 @@
 /* - BEGIN: Arrows - */
 
 .yummy-yam-arrow {
-	transition: color 400ms;
-	color: $dark;
+	transition: color 300ms;
+	color: $shadow;
 
 	display: inline-block;
 	margin-top: 10vh;
 
-	text-decoration: none;
+	// text-decoration: none;
+
 }
 
 .yummy-yam-arrow:hover {
-	color: $shadow;
+	border-color: transparent;
+	color: $dark;
 }
 
 /* - END: Arrows - */

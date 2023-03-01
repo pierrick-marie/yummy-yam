@@ -25,17 +25,18 @@
 
 a {
 	text-decoration: none;
-	color: $dark;
-	transition: 500ms;
-	border-bottom: 2px solid transparent;
+	transition: 300ms;
+	border-bottom: 1px solid transparent;
+	// text-decoration: none;
+	color: $shadow;
+	// transition: 500ms;
+	// border-bottom: 2px solid transparent;
 }
 
 a:hover {
-	color: $dark;
-}
-
-.content p a {
-	text-decoration: underline;
+	color: $shadow;
+	text-decoration: none;
+	border-color: $shadow;
 }
 
 .star {

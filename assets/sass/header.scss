@@ -65,6 +65,7 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 	transform: translate(-30%, 0);
+	border-width: 0;
 }
 
 .avatar-img {
@@ -82,11 +83,12 @@ header {
 #navbar-title {
 	position: fixed;
 	right: 20px;
+	border-width: 2px;
 }
 
-#navbar-title:hover {
-	border-color: $dark;
-}
+// #navbar-title:hover {
+// 	border-color: $dark;
+// }
 
 /* content displayed after roll down navbar */
 #navbar-content {
@@ -100,8 +102,23 @@ header {
 	display: block;
 	width: fit-content;
 	block-size: fit-content;
+	border-width: 0;
 }
 
-.navbar-link:hover {
-	border-color: $dark;
+.navbar-link h3 {
+	display: inline;
+}
+
+.navbar-link i {
+	display: inline;
+	font-size: 1.5em;
+	padding: 0;
+	margin: 0;
+	margin-right: 0.5em;
+	color: $primary;
+	transition: 500ms;
+}
+
+.navbar-link:hover i {
+	color: $shadow;
 }
