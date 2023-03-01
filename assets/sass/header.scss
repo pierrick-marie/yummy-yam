@@ -31,7 +31,6 @@ header {
 /* navbar in default view */
 #navbar {
 	width: 100%;
-	// height: navbarHeight()px;
 
 	z-index: 2;
 	margin: 0;
@@ -77,7 +76,6 @@ header {
 	height: avatarHeight();
 	width: auto;
 	transition: 500ms;
-
 }
 
 /* link navbar title */

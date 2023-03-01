@@ -6,6 +6,7 @@
 
 	margin-top: navbarHeight(); /* @see ./header.css */
 	color: #343a40; /* main.scss: $dark -> $gray-800 */
+	min-height: 90vh;
 }
 
 .yummy-yam-title {
@@ -29,12 +30,12 @@ a {
 	border-bottom: 2px solid transparent;
 }
 
-.content p a {
-	text-decoration: underline;
-}
-
 a:hover {
 	color: $dark;
+}
+
+.content p a {
+	text-decoration: underline;
 }
 
 .star {

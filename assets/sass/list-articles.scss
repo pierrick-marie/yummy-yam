@@ -46,3 +46,22 @@ $margin: 10px;
 	padding-bottom: $margin;
 }
 
+.navigation-articles {
+	width: 35%;
+	margin-left: auto;
+	margin-right: auto;
+
+	display: flex;
+	justify-content: space-around;
+
+	min-height: 6em;
+}
+
+.navigation-articles a {
+	text-decoration: underline;
+	transition: text-decoration 1000ms;
+}
+
+.navigation-articles a:hover {
+	text-decoration: none;
+}
