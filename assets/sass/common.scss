@@ -1,7 +1,7 @@
 .content {
 	background-image: url("../img/theme/background.png");
-	background-color: #fff; /* bootstrap: $white */
-	background-repeat: repeat-y;
+	background-color: #ffffff; /* bootstrap: $white */
+	// background-repeat: repeat-y;
 	background-size: 100%;
 
 	margin-top: navbarHeight(); /* @see ./header.css */
@@ -39,7 +39,7 @@ a:hover {
 
 .star {
 	display: inline;
-	text-shadow: 1px 1px 0.2em black;
+	text-shadow: 1px 1px 0.2em $shadow;
 
 	padding-left: 20px;
 	padding-right: 20px;
