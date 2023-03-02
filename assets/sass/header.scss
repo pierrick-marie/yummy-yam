@@ -12,61 +12,60 @@
 	@return calc(max(10vh, 80px));
 }
 
+.font-size-title {
+	@media screen and (max-width: 799px) {
+		font-size: $normal;
+	}
+	@media screen and (min-width: 800px) and (max-width: 2000px) {
+		font-size: $normal-huge;
+	}
+	@media screen and (min-width: 2001px) {
+		font-size: $huge;
+	}
+}
+
 .navbar {
 
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 200;
 
 	width: 100%;
 
-	background-color: $primary;
 	opacity: 1;
 
 	padding: 0;
 	
-	border-bottom: solid;
-	border-color: $dark;
-	border-width: 2px;
-
-	@media screen and (max-width: 799px) {
-		height: 60px;
-	}
-	@media screen and (min-width: 800px) and (max-width: 2000px) {
-		height: 80px;
-	}
-	@media screen and (min-width: 2001px) {
-		height: 100px;
-	}
-
 	.menu {
-		@media screen and (max-width: 799px) {
-			padding-top: 10px;
-			padding-left: 30px;
-			padding-bottom: 0;
-		}
+
+		background-color: $primary;
+		width: 100%;
+
+		padding: 0;
+		padding-left: 30px;
 
 		.entry {
-			margin: 10px;
+			margin-top: 5px;
 			display: block;
 			width: fit-content;
 			block-size: fit-content;
 			border-width: 0;
 			
 			.title {
+				@extend .font-size-title;
 				display: inline;
 			}
 			
 			.star {
 				display: inline;
-				font-size: 1.5em;
 				padding: 0;
 				margin: 0;
 				margin-right: 0.5em;
 				margin-left: 0.5em;
 				color: $primary;
 				transition: 500ms;
+
+				@extend .font-size-title;
 			}
 
 			@media screen and (max-width: 799px) {
@@ -74,99 +73,129 @@
 					display: none;
 				}
 			}
+
+			&:hover > .star {
+				color: $shadow;
+			}
 		}
 	}
 
 	.banner {
+
+		background-color: $primary;
 		width: 100%;
+
+		border-bottom: solid;
+		border-color: $dark;
+		border-width: 2px;
 	
-		z-index: 2;
 		margin: 0;
-		padding: 0;
+		padding-bottom: 0;
 		padding-left: 1em;
 		padding-right: 1em;
+		padding-top: 10px;
 
 		display: flex;
 		justify-content: space-between;
 
+		@media screen and (max-width: 799px) {
+			height: 60px;
+		}
+		@media screen and (min-width: 800px) and (max-width: 2000px) {
+			height: 80px;
+		}
+		@media screen and (min-width: 2001px) {
+			height: 130px;
+		}
+
+		.flex-container {
+			width: 30%;
+		}
+		.left {
+			text-align: left;
+		}
+		.middle {
+			text-align: center;
+		}
+		.right {
+			text-align: right;
+		}
+
 		.button {
+			margin-left: 0;
+			margin-right: auto;
+
 			border-style: solid;
 			border-width: 3px;
+			border-radius: 5px;
 		
 			background-color: $primary;
 
+			box-shadow: 6px 6px 6px $gray-600;
+			
 			@media screen and (max-width: 799px) {
 				font-size: $small;
-				border-radius: 5px;
-				margin-top: -10px;
+				width: 30px;
+				height: 35px;
 			}
 			@media screen and (min-width: 800px) and (max-width: 2000px) {
+				font-size: $normal-huge;
+				width: 45px;
+				height: 50px;
 			}
 			@media screen and (min-width: 2001px) {
-					font-size: $huge;
-					border-radius: 20px;
+				font-size: $huge;
+				width: 85px;
+				height: 100px;
+				border-radius: 15px;
+				margin-left: 20px;
 			}
 		}
 
 		.button:hover {
-			box-shadow: 5px 5px 5px $gray-600;
+			box-shadow: 3px 3px 3px $gray-900;
 		}
 
 		.avatar {
-			// position: relative;
-			// margin-left: auto;
-			// margin-right: auto;
-			// transform: translate(0, 0);
 			border-width: 0;
 			
 			.img {
 				border: none;
-				// height: avatarHeight();
 				height: auto;
 				transition: 500ms;
 			}
-		}
-
-		@media screen and (max-width: 799px) {
-			.avatar {
-				// width: 15%;
-				// height: auto;
-		
-				// margin-left: auto;
-				// margin-right: auto;
-				// transform: translate(-60%, 0);
-		
-				margin-top: 10px;
-				
-				// img {
-				// 	width: 100%;
-				// 	height: auto;
-			
-				// 	margin-left: auto;
-				// 	margin-right: auto;
-				// }
+			@media screen and (max-width: 799px) {
 				.img {
-					width: 25%;
+					width: 70px;
+				}
+			}
+	
+			@media screen and (min-width: 800px) and (max-width: 2000px) {
+				.img {
+					width: 100px;
+				}
+			}
+	
+			@media screen and (min-width: 2001px) {
+				.img {
+					width: 150px;
 				}
 			}
 		}
 
-		@media screen and (min-width: 800px) and (max-width: 2000px) {
-			.avatar {
-				bottom: -20px;
-			}
-		}
-
-		@media screen and (min-width: 2001px) {
-			.avatar {
-				bottom: -50px;
-			}
-		}
-
 		.home {
-			position: fixed;
-			right: 20px;
-			border-width: 2px;
+			display: block;
+			padding-top: 10px;
+			width: fit-content;
+			margin-left: auto;
+			.title {
+				@extend .font-size-title;
+			}
+
+			@media screen and (min-width: 2001px) {
+				margin-top: 20px;
+				margin-right: 50px;
+			}
 		}
 	}
 }

@@ -1,3 +1,8 @@
+a {
+	text-decoration: none;
+	color: black;
+}
+
 .content {
 	background-image: url("../img/theme/background.png");
 	background-color: #ffffff; /* bootstrap: $white */
@@ -15,23 +20,20 @@
 	text-align: center;
 }
 
-a {
+.link {
 	text-decoration: none;
 	transition: 300ms;
 	border-bottom: 1px solid transparent;
-	// text-decoration: none;
 	color: $shadow;
-	// transition: 500ms;
-	// border-bottom: 2px solid transparent;
+
+	&:hover {
+		color: $shadow;
+		text-decoration: none;
+		border-color: $shadow;
+	}
 }
 
-a:hover {
-	color: $shadow;
-	text-decoration: none;
-	border-color: $shadow;
-}
-
-.star {
+.content .star {
 	display: inline;
 	text-shadow: 1px 1px 0.2em $shadow;
 
@@ -57,4 +59,3 @@ a:hover {
 
 	width: 80%;
 }
-
