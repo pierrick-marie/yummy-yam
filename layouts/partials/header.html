@@ -1,38 +1,40 @@
-<header id="page-top">
+<header class="navbar">
 
 	<div id="navbarToggleExternalContent" class="collapse">
-		<div id="navbar-content" class="m-0">
+		<div class="menu m-0">
 
 			{{ if ( not $.IsHome ) }}
-				<a class="navbar-link" href="{{ $.Site.BaseURL }}">
-					<h3 class="h5 m-0">Accueil</h3>
+				<a class="entry" href="{{ $.Site.BaseURL }}">
+					<i class="star">⚝</i>
+					<h3 class="title h5 m-0">Accueil</h3>
+					<i class="star">⚝</i>
 				</a>
 			{{ end }}
 
-			{{ range .Site.Menus.main.ByWeight }} 
-				<a class="navbar-link" href="{{ $.Site.BaseURL }}{{ .URL }}">
-					<i>⚝</i><h3 class="h5 m-0">{{ .Name }}</h3><i>⚝</i>
-				</a>	
+			{{ range .Site.Menus.main.ByWeight }}
+				<a class="entry" href="{{ $.Site.BaseURL }}{{ .URL }}">
+					<i class="star">⚝</i>
+					<h3 class="title h5 m-0">{{ .Name }}</h3>
+					<i class="star">⚝</i>
+				</a>
 			{{ end }}
 
 		</div>
 	</div>
 
-	<nav id="navbar" class="navbar">
-		<div id="navbar-container" class="container-fluid">
-			<button class="navbar-toggler p-2" id="navbar-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
-				aria-controls="navbarToggleExternalContent">
-				<span id="navbar-toggler-icon" class="fa-solid fa-bars"></span>
-			</button>
+	<nav class="banner container-fluid">
+		<button class="button p-2" type="button" data-bs-toggle="collapse"
+			data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent">
+			<span class="icon fa-solid fa-bars"></span>
+		</button>
 
-			<a class="navbar-avatar p-0" href="{{ $.Site.BaseURL }}" rel="author">
-				<img class="avatar-img" alt="Avatar {{ $.Site.Params.author }}" src="{{ $.Site.BaseURL }}/img/theme/avatar.png">
-			</a>
+		<a class="avatar p-0" href="{{ $.Site.BaseURL }}" rel="author">
+			<img class="img" alt="Avatar {{ $.Site.Params.author }}" src="{{ $.Site.BaseURL }}/img/theme/avatar.png">
+		</a>
 
-			<a id="navbar-title" href="{{ $.Site.BaseURL }}">
-				<h1 class="h4 m-0">{{ $.Site.Params.author }}</h1>
-			</a>
-		</div>
+		<a class="home" href="{{ $.Site.BaseURL }}">
+			<h1 class="title h5 m-0">{{ $.Site.Params.author }}</h1>
+		</a>
 	</nav>
 
 </header>

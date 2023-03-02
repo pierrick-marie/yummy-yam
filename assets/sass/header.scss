@@ -1,7 +1,7 @@
 /**
  * Nice height of avatar image
  */
-@function avatarHeight() {
+ @function avatarHeight() {
 	@return calc(max(10vh, 80px));
 }
 
@@ -12,7 +12,8 @@
 	@return calc(max(10vh, 80px));
 }
 
-header {
+.navbar {
+
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -23,98 +24,166 @@ header {
 	background-color: $primary;
 	opacity: 1;
 
+	padding: 0;
+	
 	border-bottom: solid;
 	border-color: $dark;
 	border-width: 2px;
+
+	@media screen and (max-width: 799px) {
+		height: 60px;
+	}
+	@media screen and (min-width: 800px) and (max-width: 2000px) {
+		height: 80px;
+	}
+	@media screen and (min-width: 2001px) {
+		height: 100px;
+	}
+
+	.menu {
+		@media screen and (max-width: 799px) {
+			padding-top: 10px;
+			padding-left: 30px;
+			padding-bottom: 0;
+		}
+
+		.entry {
+			margin: 10px;
+			display: block;
+			width: fit-content;
+			block-size: fit-content;
+			border-width: 0;
+			
+			.title {
+				display: inline;
+			}
+			
+			.star {
+				display: inline;
+				font-size: 1.5em;
+				padding: 0;
+				margin: 0;
+				margin-right: 0.5em;
+				margin-left: 0.5em;
+				color: $primary;
+				transition: 500ms;
+			}
+
+			@media screen and (max-width: 799px) {
+				.star {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.banner {
+		width: 100%;
+	
+		z-index: 2;
+		margin: 0;
+		padding: 0;
+		padding-left: 1em;
+		padding-right: 1em;
+
+		display: flex;
+		justify-content: space-between;
+
+		.button {
+			border-style: solid;
+			border-width: 3px;
+		
+			background-color: $primary;
+
+			@media screen and (max-width: 799px) {
+				font-size: $small;
+				border-radius: 5px;
+				margin-top: -10px;
+			}
+			@media screen and (min-width: 800px) and (max-width: 2000px) {
+			}
+			@media screen and (min-width: 2001px) {
+					font-size: $huge;
+					border-radius: 20px;
+			}
+		}
+
+		.button:hover {
+			box-shadow: 5px 5px 5px $gray-600;
+		}
+
+		.avatar {
+			// position: relative;
+			// margin-left: auto;
+			// margin-right: auto;
+			// transform: translate(0, 0);
+			border-width: 0;
+			
+			.img {
+				border: none;
+				// height: avatarHeight();
+				height: auto;
+				transition: 500ms;
+			}
+		}
+
+		@media screen and (max-width: 799px) {
+			.avatar {
+				// width: 15%;
+				// height: auto;
+		
+				// margin-left: auto;
+				// margin-right: auto;
+				// transform: translate(-60%, 0);
+		
+				margin-top: 10px;
+				
+				// img {
+				// 	width: 100%;
+				// 	height: auto;
+			
+				// 	margin-left: auto;
+				// 	margin-right: auto;
+				// }
+				.img {
+					width: 25%;
+				}
+			}
+		}
+
+		@media screen and (min-width: 800px) and (max-width: 2000px) {
+			.avatar {
+				bottom: -20px;
+			}
+		}
+
+		@media screen and (min-width: 2001px) {
+			.avatar {
+				bottom: -50px;
+			}
+		}
+
+		.home {
+			position: fixed;
+			right: 20px;
+			border-width: 2px;
+		}
+	}
 }
 
-/* navbar in default view */
-#navbar {
-	width: 100%;
 
-	z-index: 2;
-	margin: 0;
-	padding: 0;
-}
 
-/* menu button */
-.navbar-toggler {
-	margin-left: 20px;
-	border-style: solid;
-	border-width: 3px;
 
-	background-color: $primary;
-}
 
-.navbar-toggler:focus {
-	box-shadow: none;
-}
 
-.navbar-toggler:hover {
-	box-shadow: 5px 5px 5px $gray-600;
-}
 
-#navbar-toggler-icon {
-	padding: 5px;
-}
 
-/* link over avatar image */
-.navbar-avatar {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	transform: translate(-30%, 0);
-	border-width: 0;
-}
 
-.avatar-img {
-	border: none;
-}
 
-/* image of the avatar */
-.avatar-img {
-	height: avatarHeight();
-	width: auto;
-	transition: 500ms;
-}
 
-/* link navbar title */
-#navbar-title {
-	position: fixed;
-	right: 20px;
-	border-width: 2px;
-}
 
-/* content displayed after roll down navbar */
-#navbar-content {
-	padding-top: 10px;
-	padding-left: 30px;
-	padding-bottom: 0;
-}
 
-.navbar-link {
-	margin: 10px;
-	display: block;
-	width: fit-content;
-	block-size: fit-content;
-	border-width: 0;
-}
 
-.navbar-link h3 {
-	display: inline;
-}
 
-.navbar-link i {
-	display: inline;
-	font-size: 1.5em;
-	padding: 0;
-	margin: 0;
-	margin-right: 0.5em;
-	margin-left: 0.5em;
-	color: $primary;
-	transition: 500ms;
-}
 
-.navbar-link:hover i {
-	color: $shadow;
-}
+
