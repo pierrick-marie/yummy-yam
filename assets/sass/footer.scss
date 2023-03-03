@@ -1,4 +1,8 @@
-footer {
+$footer-height-small: 30px;
+$footer-height-normal: 45px;
+$footer-height-large: 90px;
+
+.footer {
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -11,13 +15,58 @@ footer {
 	border-style: solid;
 	border-color: $dark;
 
+	margin: 0;
+	padding: 5px;
+
 	display: flex;
 	justify-content: space-between;
+
+	.text {
+		@media screen and (max-width: 799px) {
+			font-size: 0.5em;
+		}
+	}
+
+	.left {
+		text-align: left;
+	}
+
+	.right {
+		text-align: right;
+	}
+
+	@media screen and (max-width: 799px) {
+		height: $footer-height-small;
+		font-size: 0.9em;
+	}
+	@media screen and (min-width: 800px) and (max-width: 2000px) {
+		height: $footer-height-normal;
+		font-size: $small;
+	}
+	@media screen and (min-width: 2001px) {
+		height: $footer-height-large;
+		font-size: $normal-huge;
+		padding-left: 15px;
+		padding-right: 15px;
+	}	
 }
 
 .corner-image {
 	filter: drop-shadow(0 0 1rem $shadow);
 	position: fixed;
+	
+	@media screen and (max-width: 799px) {
+		bottom: $footer-height-small;
+		width: 10%;
+	}
+	@media screen and (min-width: 800px) and (max-width: 2000px) {
+		bottom: $footer-height-normal;
+		width: 6%;
+	}
+	@media screen and (min-width: 2001px) {
+		width: 6%;
+		bottom: $footer-height-large;
+	}	
 }
 
 .bottom-left {
@@ -28,6 +77,3 @@ footer {
 	right: 15px;
 }
 
-.large {
-	width: 6%;
-}

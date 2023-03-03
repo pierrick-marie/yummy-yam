@@ -3,23 +3,44 @@ var HEADER_HEIGHT = 0;	// The height of the navbar
 var ROTATION_ANGLE = "15deg";
 var avatarIsRotated = false;	// status of avatar: rotated or not
 
+var CONTENT_TITLE = '.content .title';
+var AVATAR_IMAGE = '.banner .avatar .img';
+
+var TIMELINE_PARAGRAPHS = $('.timeline .hide');
+
 $(document).ready(function () {
-
+	
 	HEADER_HEIGHT = $('header').height();
-
+	
 	$(window).scroll(function () {
 		scrollFunction();
 	});
 	scrollFunction();	// call function after loading page
-
+	
 	setupAvatarRotations();
-
+	
 	setupStars();  
 
 	setupNavArrow();
 
 	setupCornerImages();
+
+	fadeInTimeline();
 });
+
+/**
+ * Fade in timeline
+ */
+function fadeInTimeline() {
+	
+	var index = 0;
+
+	(function fadeInTimelineParagraph() {
+		TIMELINE_PARAGRAPHS.eq(index++).fadeIn(600, fadeInTimelineParagraph);
+   
+	})();
+   
+}
 
 /**
  * Add small or large background corner images
@@ -38,11 +59,11 @@ function setupCornerImages() {
  */
 function setupStars() {
 
-	$('.list-articles h1').addClass('yummy-yam-title');
+	$('.list-articles h1').addClass(CONTENT_TITLE);
 
 	// In titles h1
-	$(`<p class="star">⚝</p>`).insertBefore('.yummy-yam-title');
-	$(`<p class="star">⚝</p>`).insertAfter('.yummy-yam-title');
+	$(`<p class="star">⚝</p>`).insertBefore(CONTENT_TITLE);
+	$(`<p class="star">⚝</p>`).insertAfter(CONTENT_TITLE);
 }
 
 /**
@@ -59,15 +80,15 @@ function setupNavArrow() {
  */
 function setupAvatarRotations() {
 
-	$('.avatar-img').mouseenter(function() {	// mouse entre: rotate avatar
-		$('.avatar-img').css('rotate', `-${ROTATION_ANGLE}`);
+	$(AVATAR_IMAGE).mouseenter(function() {	// mouse entre: rotate avatar
+		$(AVATAR_IMAGE).css('rotate', `-${ROTATION_ANGLE}`);
 	});
 	
-	$('.avatar-img').mouseout(function() {	// mouse out: reset avatar rotation
-		$('.avatar-img').css('rotate', '0deg');
+	$(AVATAR_IMAGE).mouseout(function() {	// mouse out: reset avatar rotation
+		$(AVATAR_IMAGE).css('rotate', '0deg');
 	});
 
-	$('#navbar-button').click(function() {	// on click on navbar button
+	$('.banner .button').click(function() {	// on click on navbar button
 		rotateAvatar();
 	});
 }
@@ -78,10 +99,10 @@ function setupAvatarRotations() {
 function rotateAvatar() {
 
 	if(avatarIsRotated) {
-		$('.avatar-img').css('rotate', '0deg');	// reset avatar rotation
+		$(AVATAR_IMAGE).css('rotate', '0deg');	// reset avatar rotation
 		avatarIsRotated = false;
 	} else {
-		$('.avatar-img').css('rotate', `+${ROTATION_ANGLE}`);	// rotate avatar
+		$(AVATAR_IMAGE).css('rotate', `+${ROTATION_ANGLE}`);	// rotate avatar
 		avatarIsRotated = true;
 	}
 }
