@@ -4,11 +4,15 @@ a {
 }
 
 .content {
-	// background-image: url("../img/theme/background.png");
-	background-color: #e8eef1ef; /* bootstrap: $white */
+	background-image: url("../img/theme/background.jpg");
+	background-color: #ffffff; /* bootstrap: $white */
 	// background-repeat: repeat-y;
-	background-size: 100%;
-
+	// background-attachment: local;
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
 	@media screen and (max-width: 799px) {
 		margin-top: bannerHeight(mobile);
 		padding-top: 2em;
