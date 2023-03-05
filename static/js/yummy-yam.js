@@ -36,7 +36,7 @@ function fadeInTimeline() {
 	var index = 0;
 
 	(function fadeInTimelineParagraph() {
-		TIMELINE_PARAGRAPHS.eq(index++).fadeIn(600, fadeInTimelineParagraph);
+		TIMELINE_PARAGRAPHS.eq(index++).fadeIn(300, fadeInTimelineParagraph);
    
 	})();
    

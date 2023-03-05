@@ -6,7 +6,7 @@
 			{{ if ( not $.IsHome ) }}
 				<a class="entry" href="{{ $.Site.BaseURL }}">
 					<i class="star">⚝</i>
-					<h3 class="title link">Accueil</h3>
+					<h3 class="title">Accueil</h3>
 					<i class="star">⚝</i>
 				</a>
 			{{ end }}
@@ -14,7 +14,7 @@
 			{{ range .Site.Menus.main.ByWeight }}
 				<a class="entry" href="{{ $.Site.BaseURL }}{{ .URL }}">
 					<i class="star">⚝</i>
-					<h3 class="title link">{{ .Name }}</h3>
+					<h3 class="title">{{ .Name }}</h3>
 					<i class="star">⚝</i>
 				</a>
 			{{ end }}
@@ -39,7 +39,7 @@
 
 			<div class="flex-container right">
 				<a class="home" href="{{ $.Site.BaseURL }}">
-					<h1 class="title link">{{ $.Site.Params.author }}</h1>
+					<h1 class="title">{{ $.Site.Params.author }}</h1>
 				</a>
 			</div>
 		<!-- </div> -->
