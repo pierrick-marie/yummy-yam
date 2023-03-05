@@ -1,9 +1,24 @@
+.content > .section > .subtitle {
+	padding-top: 2em;
+}
+
+.content > .section > .paragraph {
+	margin-top: 3em;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .timeline {
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 40px;
+	margin-top: 2em;
 	height: 25em;
+
+	@media screen and (min-width: 2001px) {
+		height: 50em;
+	}
 
 	.event {
 		display: flex;
@@ -20,10 +35,12 @@
 
 		.right {
 			text-align: right;
+			width: 49%;
 		}
 
 		.left {
 			text-align: left;
+			width: 49%;
 		}
 
 		.date {
