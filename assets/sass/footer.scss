@@ -21,6 +21,8 @@ $footer-height-large: 90px;
 	display: flex;
 	justify-content: space-between;
 
+	z-index: 100;
+
 	.text {
 		@media screen and (max-width: 799px) {
 			font-size: 0.5em;

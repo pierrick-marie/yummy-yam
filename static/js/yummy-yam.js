@@ -1,25 +1,27 @@
-var HEADER_HEIGHT = 0;	// The height of the navbar
+const HEADER_HEIGHT = $('header').height(); // The height of the navbar
+var headerIsHide = false;
 
-var ROTATION_ANGLE = "15deg";
+const TECHNOLOGIES_TOP = $('#technologies .cv').first().offset().top;
+var technologiesAreHide = true;
+
+const ROTATION_ANGLE = "15deg";
 var avatarIsRotated = false;	// status of avatar: rotated or not
 
-var CONTENT_TITLE = '.content .title';
-var AVATAR_IMAGE = '.banner .avatar .img';
+const CONTENT_TITLE = '.content .title';
+const AVATAR_IMAGE = '.banner .avatar .img';
 
-var TIMELINE_PARAGRAPHS = $('.timeline .hide');
+const TIMELINE_PARAGRAPHS = $('.timeline .hide');
 
 $(document).ready(function () {
-	
-	HEADER_HEIGHT = $('header').height();
-	
+
 	$(window).scroll(function () {
 		scrollFunction();
 	});
 	scrollFunction();	// call function after loading page
-	
+
 	setupAvatarRotations();
-	
-	setupStars();  
+
+	setupStars();
 
 	setupNavArrow();
 
@@ -32,14 +34,13 @@ $(document).ready(function () {
  * Fade in timeline
  */
 function fadeInTimeline() {
-	
+
 	var index = 0;
 
 	(function fadeInTimelineParagraph() {
 		TIMELINE_PARAGRAPHS.eq(index++).fadeIn(300, fadeInTimelineParagraph);
-   
+
 	})();
-   
 }
 
 /**
@@ -80,15 +81,15 @@ function setupNavArrow() {
  */
 function setupAvatarRotations() {
 
-	$(AVATAR_IMAGE).mouseenter(function() {	// mouse entre: rotate avatar
+	$(AVATAR_IMAGE).mouseenter(function () {	// mouse entre: rotate avatar
 		$(AVATAR_IMAGE).css('rotate', `-${ROTATION_ANGLE}`);
 	});
-	
-	$(AVATAR_IMAGE).mouseout(function() {	// mouse out: reset avatar rotation
+
+	$(AVATAR_IMAGE).mouseout(function () {	// mouse out: reset avatar rotation
 		$(AVATAR_IMAGE).css('rotate', '0deg');
 	});
 
-	$('.banner .button').click(function() {	// on click on navbar button
+	$('.banner .button').click(function () {	// on click on navbar button
 		rotateAvatar();
 	});
 }
@@ -98,7 +99,7 @@ function setupAvatarRotations() {
  */
 function rotateAvatar() {
 
-	if(avatarIsRotated) {
+	if (avatarIsRotated) {
 		$(AVATAR_IMAGE).css('rotate', '0deg');	// reset avatar rotation
 		avatarIsRotated = false;
 	} else {
@@ -117,10 +118,28 @@ function scrollFunction() {
 
 	var scroll = $(window).scrollTop();
 
-	if( scroll > HEADER_HEIGHT ) {
-		header.stop().fadeOut(700);
+	if (false == headerIsHide && scroll > HEADER_HEIGHT) {
+		headerIsHide = true;
+		header.fadeOut(500);
 	} else {
-		header.stop().fadeIn(700);
+		if(true == headerIsHide && scroll <= HEADER_HEIGHT) {
+			headerIsHide = false;
+			header.fadeIn(500);
+		}
+	}
+
+	scroll += $(window).height();
+
+	if (true == technologiesAreHide && scroll >= TECHNOLOGIES_TOP) {
+		var indexLanguages = 0;
+		var indexTools = 0;
+		(function showTechnologies() {
+			$(`.languages .hide`).eq(indexLanguages++).fadeIn(300, showTechnologies);
+		})();
+		(function showTechnologies() {
+			$(`.tools .hide`).eq(indexTools++).fadeIn(300, showTechnologies);
+		})();
+		technologiesAreHide = false;
 	}
 }
 
