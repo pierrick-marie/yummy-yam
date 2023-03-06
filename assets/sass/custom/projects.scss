@@ -76,6 +76,10 @@
 		bottom: 0;
 	}
 
+	@media screen and (min-width: 800px) and (max-width: 2000px) {
+		margin-bottom: 4em;
+	}
+
 	border-style: solid;
 	border-width: 1px;
 	border-color: #4e4a4a;
