@@ -1,7 +1,7 @@
-Yummy Yam Hugo theme
+Yummy Yam Hugo theme - Under development
 ============================
 
-A theme for [Hugo server](https://gohugo.io/commands/hugo_server/) - **always under development!**
+A theme for [Hugo server](https://gohugo.io/commands/hugo_server/)
 
 # Demonstration
 
