@@ -1,9 +1,6 @@
 const HEADER_HEIGHT = $('header').height(); // The height of the navbar
 var headerIsHide = false;
 
-const TECHNOLOGIES_TOP = $('#technologies .cv').first().offset().top;
-var technologiesAreHide = true;
-
 const ROTATION_ANGLE = "15deg";
 var avatarIsRotated = false;	// status of avatar: rotated or not
 
@@ -23,25 +20,8 @@ $(document).ready(function () {
 
 	setupStars();
 
-	setupNavArrow();
-
 	setupCornerImages();
-
-	fadeInTimeline();
 });
-
-/**
- * Fade in timeline
- */
-function fadeInTimeline() {
-
-	var index = 0;
-
-	(function fadeInTimelineParagraph() {
-		TIMELINE_PARAGRAPHS.eq(index++).fadeIn(300, fadeInTimelineParagraph);
-
-	})();
-}
 
 /**
  * Add small or large background corner images
@@ -50,8 +30,7 @@ function setupCornerImages() {
 
 	var origin = window.location.origin;
 
-	$('.yummy-yam-corner-images').append(`
-		<img class="corner-image bottom-left large" alt="corner image bottom left" src="${origin}/img/theme/corner-left.png">
+	$('.yummy-yam-corner-images').append(`<img class="corner-image bottom-left large" alt="corner image bottom left" src="${origin}/img/theme/corner-left.png">
 		<img class="corner-image bottom-right large" alt="corner image bottom right" src="${origin}/img/theme/corner-right.png">`);
 }
 
@@ -65,13 +44,6 @@ function setupStars() {
 	// In titles h1
 	$(`<p class="star">⚝</p>`).insertBefore(CONTENT_TITLE);
 	$(`<p class="star">⚝</p>`).insertAfter(CONTENT_TITLE);
-}
-
-/**
- * Add down arrow to navigate in main page
- */
-function setupNavArrow() {
-	$('.yummy-yam-arrow').html('⮛<br>⮛');
 }
 
 /**
@@ -126,20 +98,6 @@ function scrollFunction() {
 			headerIsHide = false;
 			header.fadeIn(500);
 		}
-	}
-
-	scroll += $(window).height();
-
-	if (true == technologiesAreHide && scroll >= TECHNOLOGIES_TOP) {
-		var indexLanguages = 0;
-		var indexTools = 0;
-		(function showTechnologies() {
-			$(`.languages .hide`).eq(indexLanguages++).fadeIn(300, showTechnologies);
-		})();
-		(function showTechnologies() {
-			$(`.tools .hide`).eq(indexTools++).fadeIn(300, showTechnologies);
-		})();
-		technologiesAreHide = false;
 	}
 }
 

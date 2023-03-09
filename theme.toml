@@ -2,17 +2,17 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "Yummy Yam"
-license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
+license = "BSD 3-Clause License"
+licenselink = "https://raw.githubusercontent.com/pierrick-marie/yummy-yam/main/LICENSE"
+description = "A highly customisable static single home page"
+homepage = "https://github.com/pierrick-marie/yummy-yam"
 tags = []
-features = []
+features = ["JQuery", "Bootstrap", "Fontawesome", "Single home page"]
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Pierrick MARIE"
+  homepage = "https://pierrick-marie.github.io"
 
 # If porting an existing theme
 [original]

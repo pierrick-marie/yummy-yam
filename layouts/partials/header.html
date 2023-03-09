@@ -1,48 +1,44 @@
 <header class="navbar">
 
 	<div id="navbarToggleExternalContent" class="collapse menu m-0">
-		<!-- <div id="navbar-content" class="menu m-0"> -->
 
-			{{ if ( not $.IsHome ) }}
-				<a class="entry" href="{{ $.Site.BaseURL }}">
-					<i class="star">⚝</i>
-					<h3 class="title">Accueil</h3>
-					<i class="star">⚝</i>
-				</a>
-			{{ end }}
+		{{ if ( not $.IsHome ) }}
+			<a class="entry" href="{{ $.Site.BaseURL }}">
+				<i class="star">⚝</i>
+				<h3 class="title">Accueil</h3>
+				<i class="star">⚝</i>
+			</a>
+		{{ end }}
 
-			{{ range .Site.Menus.main.ByWeight }}
-				<a class="entry" href="{{ $.Site.BaseURL }}{{ .URL }}">
-					<i class="star">⚝</i>
-					<h3 class="title">{{ .Name }}</h3>
-					<i class="star">⚝</i>
-				</a>
-			{{ end }}
+		{{ range .Site.Menus.main.ByWeight }}
+			<a class="entry" href="{{ $.Site.BaseURL }}#{{ .URL }}">
+				<i class="star">⚝</i>
+				<h3 class="title">{{ .Name }}</h3>
+				<i class="star">⚝</i>
+			</a>
+		{{ end }}
 
-		<!-- </div> -->
 	</div>
 
 	<nav class="banner">
-		<!-- <div id="navbar-container" class="container-fluid"> -->
-			<div class="flex-container left">
-				<button class="button" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent">
-					<span class="icon fa-solid fa-bars"></span>
-				</button>
-			</div>
+		<div class="flex-container left">
+			<button class="button" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent">
+				<span class="icon fa-solid fa-bars"></span>
+			</button>
+		</div>
 
-			<div class="flex-container middle">
-				<a class="avatar" href="{{ $.Site.BaseURL }}" rel="author">
-					<img class="img" alt="Avatar {{ $.Site.Params.author }}" src="{{ $.Site.BaseURL }}/img/theme/avatar.png">
-				</a>
-			</div>
+		<div class="flex-container middle">
+			<a class="avatar" href="{{ $.Site.BaseURL }}" rel="author">
+				<img class="img" alt="Avatar {{ $.Site.Params.author }}" src="{{ $.Site.BaseURL }}/img/theme/avatar.png">
+			</a>
+		</div>
 
-			<div class="flex-container right">
-				<a class="home" href="{{ $.Site.BaseURL }}">
-					<h1 class="title">{{ $.Site.Params.author }}</h1>
-				</a>
-			</div>
-		<!-- </div> -->
+		<div class="flex-container right">
+			<a class="home" href="{{ $.Site.BaseURL }}">
+				<h1 class="title">{{ $.Site.Params.author }}</h1>
+			</a>
+		</div>
 	</nav>
 
 </header>

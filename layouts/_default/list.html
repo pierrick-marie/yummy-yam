@@ -1,4 +1,4 @@
-<!-- The base of all pages -->
+<!-- The base of list articles -->
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -6,69 +6,17 @@
 
 <body>
 	{{- partial "header.html" . -}}
-
+	
 	<div class="content text-center">
-
-		<section class="list-articles">
-
-			{{ .Content }}
-
-			{{ $paginator := .Paginate .Pages }}
-			{{ if $paginator }}
-
-				{{ range $paginator.Pages.ByPublishDate.Reverse }}
-				<section class="summary-article">
-
-					<p class="metadata-article">
-						{{ if ( eq .Site.Params.timeFormat "french" ) }}
-							{{ $monthNumber := ( printf "%d" .Date.Month ) }}
-							{{ $monthFr := index $.Site.Data.mois $monthNumber }}
-							{{ .Date.Day }} {{ $monthFr }} {{ .Date.Year }}
-						{{ else }}
-							{{ time.Format "02 January 2006" .Date }}
-						{{ end }}
-						-
-						{{ .ReadingTime }}
-						{{ if ( gt .ReadingTime 1 ) }}
-							minutes
-						{{ else }}
-							minute
-						{{ end }}
-					</p>
-
-					<div class="description-article">
-						<a href="{{ .RelPermalink }}">
-							<img class="thumbnail-article" src="{{ $.Site.BaseURL }}img/{{ .Params.thumbnail }}" alt="{{ .Title }}">
-						</a>
-
-						<div>
-							<h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-							<p> {{ .Summary }} </p>
-						</div>
-					</div>
-
-				</section>
-				{{ end }}
-			{{ end }}
-
+	
+		<section class="section"> 
+			<h1 class="title">Sorry, the list of article is not supported yet :(</h1>
 		</section>
-
-		<div class="navigation-articles">
-			{{ if $paginator.HasPrev }}
-				<a href="{{ $.Site.BaseURL }}posts/page/{{ $paginator.Prev.PageNumber }}">«« Articles précédents</a>
-			{{ end }}
-
-			{{ if $paginator.HasNext }}
-				<a href="{{ $.Site.BaseURL }}posts/page/{{ $paginator.Next.PageNumber }}">Articles suivants »»</a>
-			{{ end }}
-		</div>
-
 	</div>
-
+	
 	{{- partial "footer.html" . -}}
-
+	
 	{{- partial "script.html" . -}}
-
 </body>
 
 </html>

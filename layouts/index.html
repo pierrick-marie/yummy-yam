@@ -2,22 +2,19 @@
 
 <div class="content text-center">
 	
-	<section class="section"> <!-- _index.html -->
-		<!-- BLOCK: add starts around the title -->
-		<h1 class="title">{{ .Title | title }}</h1>
-
-		{{ .Content }} 
-	</section>
-
-	{{ range .Pages.ByWeight }} <!-- All other content -->
+	{{ range .Pages.ByWeight }} 
 
 		{{ if ( gt .Weight 0 ) }}
 
 			<section id="{{ .File.BaseFileName }}" class="section">
-				<!-- BLOCK: add starts around the title -->
-				<h1 class="title">{{ .Title | title }}</h1>
+				
+				{{ with .Title | title }}
+					<h1 class="title">{{- . -}}</h1>
+				{{ end }}
+				
 
 				{{ .Content }}
+				
 			</section>
 
 		{{ end }}

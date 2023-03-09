@@ -1,0 +1,36 @@
+baseURL = 'https://my-web-site.io/'
+languageCode = 'fr-FR'
+title = 'Web site title'
+theme = 'yummy-yam'
+
+disableKinds = ["taxonomy", "term", "RSS"]
+
+enableRobotsTXT = true
+
+contentDir = 'content'
+
+[params]
+	author = "Author"
+	subtitle = "Subtitle"
+	description = "Web site description"
+	keywords = "key, words"
+	customJS = "custom-js.js"
+	language = "french"
+
+[menu]
+	[[menu.main]]
+		name = 'Images and so on'
+		url = 'images'
+		weight = 1
+	[[menu.main]]
+		name = 'Languages'
+		url = 'languages'
+		weight = 2
+	[[menu.main]]
+		name = 'Last section'
+		url = 'last'
+		weight = 3
+[sitemap]
+	changefreq = 'monthly'
+	filename = 'sitemap.xml'
+
