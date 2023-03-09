@@ -39,8 +39,14 @@
 		height: 26em;
 	}
 	@media screen and (min-width: 2001px) {
-		width: 50%;
-		height: 60em;
+		@media (orientation: portrait) {
+			width: 70%;
+			height: 60em;
+		}
+		@media (orientation: landscape) {
+			width: 50%;
+			height: 60em;
+		}
 	}
 }
 

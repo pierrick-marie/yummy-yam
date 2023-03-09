@@ -6,9 +6,6 @@
 	margin-right: auto;
 	width: 95%;
 	
-	// @DEBUG
-	// background-color: #1538d425;
-
 	@media screen and (max-width: 799px) {
 		padding-top: 1em;
 		display: block;
@@ -21,7 +18,12 @@
 		width: 65%;
 	}
 	@media screen and (min-width: 2001px) {
-		width: 60%;
+		@media (orientation: portrait) {
+			width: 85%;
+		}
+		@media (orientation: landscape) {
+			width: 60%;
+		}
 		padding-top: 5em;
 	}
 	
@@ -30,9 +32,6 @@
 		width: 50%;
 		margin: 0;
 		
-		// @DEBUG
-		// background-color: #1538d425;
-
 		@media screen and (max-width: 799px) {
 			width: 100%;
 			margin-left: auto;
@@ -57,19 +56,26 @@
 				padding-top: 0;
 			}
 
+			@media screen and (min-width: 2001px) {
+				@media (orientation: portrait) {
+					font-size: 2.4em;
+				}
+			}
+	
+
 			display: flex;
 			margin-left: auto;
 			margin-right: auto;
 			padding-top: 1em;
 
 			.names {
-				width: 50%;
+				width: 55%;
 				text-align: right;
 				padding-right: 0.5em;
 				margin: 0;
 			}
 			.stars {
-				width: 50%;
+				width: 45%;
 				text-align: left;
 				padding-left: 0.5em;
 

@@ -218,6 +218,10 @@
 				}
 			}
 
+			@media screen and (max-width: 799px) and (orientation: portrait) {
+				font-size: 0.9em;
+			}
+
 			@media screen and (min-width: 2001px) {
 				margin-right: 2em;
 			}
