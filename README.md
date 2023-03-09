@@ -5,13 +5,21 @@ A theme for [Hugo server](https://gohugo.io/commands/hugo_server/)
 
 # Demonstration
 
-You can find a demonstration of Yummy Yam at this address: https://pierrick-marie.github.io/
+You can find a demonstration of Yummy Yam at this address: https://pierrick-marie.github.io
 
 # Features
 
-1. A static single main page with many sections highly customizable with HTML, Scss and Javascript.
-2. JQuery, Bootstrap and Fontawesome already included
-3. Dynamic pages for blog posts: **still under development!**
+Yummy Yam is half a theme and half a framework.
+
+**A theme** that generate main menu and titles.
+
+**A framework** to easily develop a web page with useful librairies and Hugo server. 
+
+Yummy Yam provides:
+
+1. a single main page with many sections highly customizable with HTML, Scss and Javascript
+2. JQuery, Bootstrap and Fontawesome librairies
+3. dynamic pages for blog posts: **still under development...**
 
 # Installation
 
@@ -59,6 +67,8 @@ To export your site a static web site use the following command:
 hugo
 ```
 
+The resulting web site is into *public* folder. 
+
 # How to use Yummy Yam
 
 All documentation about how to use Yummy Yam is also available in *yummy-yam/example/content/\**. This documentation is then displayed as default content of your web page after the first installation of Yummy Yam.
@@ -66,6 +76,33 @@ All documentation about how to use Yummy Yam is also available in *yummy-yam/exa
 ## Configure your web site
 
 The file *config.toml* contains many important informations for Yummy Yam.
+
+```toml
+baseURL = 'https://my-web-site.io/'
+languageCode = 'fr-FR'
+title = 'Web site title'
+theme = 'yummy-yam'
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
+contentDir = 'content'
+
+[params]
+	author = "Author"
+	description = "Web site description"
+	keywords = "key, words"
+	customJS = "custom-js.js"
+	language = "french"
+
+[menu]
+	[[menu.main]]
+		name = '<title>'
+		url = '<file>'
+		weight = 1
+
+[sitemap]
+	changefreq = 'monthly'
+	filename = 'sitemap.xml'
+```
 
 * *baseURL*: the URL used to generate links when you export your web site
 * *languageCode*: defines language in head section
@@ -79,7 +116,7 @@ The file *config.toml* contains many important informations for Yummy Yam.
 
 * *[menu.main]*: setup all entry in main menu. Name is the title displayed in header. url is id of the section it refers. Weight is the ordre in menu. 
 
-## $ Sections 
+## > Sections 
 
 In Yummy Yam a section is a file stored in *content* folder.
 All sections are sorted following their weight.
@@ -88,20 +125,20 @@ All sections with weight 0 are not included.
 
 If a section has a title in heading, it is automatically included as a title in the HTML body.
 
-## $ Images, Javascript and CSS
+## > Images, Javascript and CSS
 
 You don't have to modify the theme to modify your web site!
 
-### Images
+### **Images**
 
 You can change all default images used by Yummy Yam in folder *your-site/static/img/theme*.
 
-### Javascript
+### **Javascript**
 
 You can add your own script in *your-site/static/js/custom-js.js*.
 You can configure this file in *[params] customJS* in your *config.toml* file.
 
-### Scss
+### **Scss**
 
 You can add your own Scss properties in *your-site/static/sass/*.
 Yummy Yam automatically import all content from *your-site/static/sass/all.scss*.
@@ -127,7 +164,7 @@ The most important classes are placed in *common.scss*:
 
 The default CSS have been design to be responsive for all screens in any orientation.
 
-## $ Setup language
+## > Setup language
 
 You can switch the language of Yummy Yam from french to english in config.toml with *[params] language = "french / english"*.
 It changes the time format and texts in footer.

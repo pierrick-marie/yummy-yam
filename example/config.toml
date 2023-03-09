@@ -37,4 +37,3 @@ contentDir = 'content'
 [sitemap]
 	changefreq = 'monthly'
 	filename = 'sitemap.xml'
-
