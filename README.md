@@ -64,7 +64,7 @@ To export your site a static web site use the following command:
 
 ```shell
 # From "my_new_web_site"
-hugo
+hugo --cleanDestinationDir
 ```
 
 The resulting web site is into *public* folder. 
