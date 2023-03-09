@@ -9,8 +9,9 @@ You can find a demonstration of Yummy Yam at this address: https://pierrick-mari
 
 # Features
 
-1. A static single main page with many sections
-2. Dynamic pages for blog posts: **under development!**
+1. A static single main page with many sections highly customizable with HTML, Scss and Javascript.
+2. JQuery, Bootstrap and Fontawesome already included
+3. Dynamic pages for blog posts: **still under development!**
 
 # Installation
 
@@ -31,7 +32,102 @@ git clone https://github.com/pierrick-marie/yummy-yam.git
 
 ## 3. Setup your web site with the example from Yummy Yam
 
-```
+```shell
 # From "my_new_web_site/theme"
 cp yummy-yam/example/* ../
 ```
+
+This command initializes a default configuration for your web site, adds default images for Yummy Yam and creates default content.
+
+# Run Yummy Yam
+
+To create your web site use the following command:
+
+```shell
+# From "my_new_web_site"
+hugo server
+```
+
+Your web site is now available at this address: http://localhost:1313
+
+# Export your site
+
+To export your site a static web site use the following command:
+
+```shell
+# From "my_new_web_site"
+hugo
+```
+
+# How to use Yummy Yam
+
+All documentation about how to use Yummy Yam is also available in *yummy-yam/example/content/\**. This documentation is then displayed as default content of your web page after the first installation of Yummy Yam.
+
+## Configure your web site
+
+The file *config.toml* contains many important informations for Yummy Yam.
+
+* *baseURL*: the URL used to generate links when you export your web site
+* *languageCode*: defines language in head section
+* *title*: web site title
+
+* *[params] author*: author of the web site
+* *[params] description*: used in head section
+* *[params] keywords*: used in head section
+* *[params] customJS*: the name of your custom Javascript file in static/js folder
+* *[params] language*: chose french or english language in footer
+
+* *[menu.main]*: setup all entry in main menu. Name is the title displayed in header. url is id of the section it refers. Weight is the ordre in menu. 
+
+## $ Sections 
+
+In Yummy Yam a section is a file stored in *content* folder.
+All sections are sorted following their weight.
+The first section is placed in first position because its weight is 1.
+All sections with weight 0 are not included.
+
+If a section has a title in heading, it is automatically included as a title in the HTML body.
+
+## $ Images, Javascript and CSS
+
+You don't have to modify the theme to modify your web site!
+
+### Images
+
+You can change all default images used by Yummy Yam in folder *your-site/static/img/theme*.
+
+### Javascript
+
+You can add your own script in *your-site/static/js/custom-js.js*.
+You can configure this file in *[params] customJS* in your *config.toml* file.
+
+### Scss
+
+You can add your own Scss properties in *your-site/static/sass/*.
+Yummy Yam automatically import all content from *your-site/static/sass/all.scss*.
+A good practice is placing your Scss in different files and import them from *all.scss*.
+You can already find an example to customise the last section.
+
+Yummy Yam already includes JQuery version 3.6.3, Bootstrap version 5.2.3 and Fontawesome version 6.2.1.
+Do not hesitate to use and use them again.
+
+**Default CSS classes**
+
+Do not hesitate to have a look in defaults Scss properties in: *your-site/themes/yummy-yam/assets/sass*.
+The most important classes are placed in *common.scss*:
+
+* a
+* content
+* section
+* star
+* title
+* subtitle
+* paragraph
+* link
+
+The default CSS have been design to be responsive for all screens in any orientation.
+
+## $ Setup language
+
+You can switch the language of Yummy Yam from french to english in config.toml with *[params] language = "french / english"*.
+It changes the time format and texts in footer.

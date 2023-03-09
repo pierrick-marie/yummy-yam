@@ -11,7 +11,6 @@ contentDir = 'content'
 
 [params]
 	author = "Author"
-	subtitle = "Subtitle"
 	description = "Web site description"
 	keywords = "key, words"
 	customJS = "custom-js.js"
@@ -27,9 +26,14 @@ contentDir = 'content'
 		url = 'languages'
 		weight = 2
 	[[menu.main]]
+		name = 'config.toml'
+		url = 'config'
+		weight = 3
+	[[menu.main]]
 		name = 'Last section'
 		url = 'last'
-		weight = 3
+		weight = 4
+
 [sitemap]
 	changefreq = 'monthly'
 	filename = 'sitemap.xml'
