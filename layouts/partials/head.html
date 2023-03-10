@@ -14,7 +14,13 @@
 	<meta name="robots" content="index, follow">
 	
 	<meta property="og:title" content="{{ $title }}">
-	<meta property="og:image" content="{{ $.Site.BaseURL }}img/avatar.png">
+
+	{{ if (eq $.Site.BaseURL "") }}
+		<meta property="og:image" content="./img/theme/avatar.png">
+	{{ else }}
+		<meta property="og:image" content="{{ $.Site.BaseURL }}img/theme/avatar.png">
+	{{ end }}
+
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="252">
 	<meta property="og:image:height" content="256">
@@ -24,8 +30,13 @@
 
 	<link rel="stylesheet" type="text/css" href="{{ $.Site.BaseURL }}css/fontawesome-6.2.1/css/all.min.css">
 
-	{{ $sass := resources.Get "./sass/yummy-yam.scss" }}
+	{{ $sass := resources.Get "sass/yummy-yam.scss" }}
 	{{ $style := $sass | resources.ToCSS | resources.Minify }}
-	<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
+
+	{{ if (eq $.Site.BaseURL "") }}
+		<link rel="stylesheet" type="text/css" href=".{{ $style.Permalink }}">
+	{{ else }}
+		<link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
+	{{ end }}
 
 </head>
