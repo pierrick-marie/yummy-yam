@@ -98,11 +98,6 @@ a {
 }
 
 .paragraph {
-	padding-top: 1em;
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
-
 	@media screen and (max-width: 799px) {
 		font-size: 0.8em;
 	}
