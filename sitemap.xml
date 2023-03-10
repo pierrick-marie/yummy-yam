@@ -2,25 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://my-web-site.io/introduction/</loc>
-    <changefreq>monthly</changefreq>
-  </url><url>
-    <loc>https://my-web-site.io/images/</loc>
-    <changefreq>monthly</changefreq>
-  </url><url>
-    <loc>https://my-web-site.io/config/</loc>
-    <changefreq>monthly</changefreq>
-  </url><url>
-    <loc>https://my-web-site.io/languages/</loc>
-    <changefreq>monthly</changefreq>
-  </url><url>
-    <loc>https://my-web-site.io/last/</loc>
-    <changefreq>monthly</changefreq>
-  </url><url>
-    <loc>https://my-web-site.io/darft/</loc>
-    <changefreq>monthly</changefreq>
-  </url><url>
-    <loc>https://my-web-site.io/</loc>
+    <loc>/</loc>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>

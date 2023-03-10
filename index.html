@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr-FR"><head>
 	<meta name="generator" content="Hugo 0.92.2" />
@@ -17,19 +16,26 @@
 	<meta name="robots" content="index, follow">
 	
 	<meta property="og:title" content="Author - Web site title">
-	<meta property="og:image" content="./img/avatar.png">
+
+	
+		<meta property="og:image" content="./img/theme/avatar.png">
+	
+
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="252">
 	<meta property="og:image:height" content="256">
 	<meta property="og:description" content="Web site description">
 
-	<link rel="icon" type="image/x-icon" href="./img/theme/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="img/theme/favicon.ico">
 
-	<link rel="stylesheet" type="text/css" href="./css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="css/fontawesome-6.2.1/css/all.min.css">
 
 	
 	
-	<link rel="stylesheet" type="text/css" href="./sass/yummy-yam.min.css">
+
+	
+		<link rel="stylesheet" type="text/css" href="./sass/yummy-yam.min.css">
+	
 
 </head><body><header class="navbar">
 
@@ -38,25 +44,25 @@
 		
 
 		
-			<a class="entry" href="https://my-web-site.io/#images">
+			<a class="entry" href="#images">
 				<i class="star">⚝</i>
 				<h3 class="title">Images and so on</h3>
 				<i class="star">⚝</i>
 			</a>
 		
-			<a class="entry" href="https://my-web-site.io/#languages">
+			<a class="entry" href="#languages">
 				<i class="star">⚝</i>
 				<h3 class="title">Languages</h3>
 				<i class="star">⚝</i>
 			</a>
 		
-			<a class="entry" href="https://my-web-site.io/#config">
+			<a class="entry" href="#config">
 				<i class="star">⚝</i>
 				<h3 class="title">config.toml</h3>
 				<i class="star">⚝</i>
 			</a>
 		
-			<a class="entry" href="https://my-web-site.io/#last">
+			<a class="entry" href="#last">
 				<i class="star">⚝</i>
 				<h3 class="title">Last section</h3>
 				<i class="star">⚝</i>
@@ -74,13 +80,13 @@
 		</div>
 
 		<div class="flex-container middle">
-			<a class="avatar" href="." rel="author">
+			<a class="avatar" href="" rel="author">
 				<img class="img" alt="Avatar Author" src="./img/theme/avatar.png">
 			</a>
 		</div>
 
 		<div class="flex-container right">
-			<a class="home" href=".">
+			<a class="home" href="">
 				<h1 class="title">Author</h1>
 			</a>
 		</div>
@@ -104,7 +110,7 @@
 				
 <h2 class="h4" style="padding-top: 2em;">The following informations will help you to understand how it works</h2>
 
-<p class="paragraph">
+<p class="par">
 	I built this theme to have a highly customizable single web page.
 	That page already includes JQuery, Bootstrap and Fontawesome.
 	It generates a dynamic main menu.
@@ -114,7 +120,7 @@
 	To summary, Yummy Yam is just a skeleton to create a new HTML web page.
 </p>
 
-<p class="paragraph">
+<p class="par">
 	In Yummy Yam a section is a file stored in *content* folder.
 
 	All sections are sorted following their weight. <br>
@@ -122,7 +128,7 @@
 	All sections with weight 0 are not included.
 </p>
 
-<p class="paragraph">
+<p class="par">
 	If a section has a title in heading, it is automatically included as a title in the HTML body.  
 </p>
 				
@@ -142,40 +148,40 @@
 				
 
 				
-<p class="paragraph">
+<p class="par">
 	You don't have to modify the theme to modify your web site!
 </p>
 
 <h2 class="subtitle">Images</h2>
 
-<p class="paragraph">
+<p class="par">
 	You can change all default images used by Yummy Yam in folder: <em>your-site/static/img/theme</em>.
 </p>
 
 <h2 class="subtitle">Javascript</h2>
 
-<p class="paragraph">
+<p class="par">
 	You can add your own script in: <em>your-site/static/js/custom-js.js</em>. <br>
 	You can configure this file in <em>[params] customJS</em> in your <em>config.toml</em> file.
 </p>
 
 <h2 class="subtitle">Scss</h2>
 
-<p class="paragraph">
+<p class="par">
 	You can add your own Scss properties in <em>your-site/static/sass/</em>. <br>
 	Yummy Yam automatically import all content from <em>your-site/static/sass/all.scss</em>. <br>
 	A good practice is placing your Scss in different files and import them from <em>all.scss</em> <br>
 	You can already find an example to customise the last section.
 </p>
 
-<p class="paragraph">
+<p class="par">
 	Yummy Yam already includes JQuery version 3.6.3, Bootstrap version 5.2.3 and Fontawesome version 6.2.1. <br>
 	Do not hesitate to use and use them again.
 </p>
 
 <h3 class="h5 p-0 m-0">Default CSS classes</h3>
 
-<p class="paragraph">
+<p class="par">
 	Do not hesitate to have a look in defaults Scss properties in: <em>your-site/themes/yummy-yam/assets/sass</em>. <br>
 	The most important classes are placed in <em>common.scss</em>:
 	
@@ -210,7 +216,7 @@
 				
 				
 
-				<p class="paragraph">
+				<p class="par">
 
 	The file <em>config.toml</em> contains many important informations for Yummy Yam. <br> <br>
 	
@@ -224,7 +230,7 @@
 	<em>[params] customJS</em>: the name of your custom Javascript file in static/js folder <br>
 	<em>[params] language</em>: chose french or english language in footer <br> <br>
 
-	<em>[menu.main] </em>: setup all entry in main menu. Name is the title displayed in header. url is id of the section it refers. Weight is the ordre in menu. <br>
+	<em>[menu.main]</em>: setup all entry in main menu. Name is the title displayed in header. url is id of the section it refers. Weight is the ordre in menu. <br>
 </p>
 				
 			</section>
@@ -243,7 +249,7 @@
 				
 <h1 class="title">Setup language</h1>
 
-<p class="paragraph">
+<p class="par">
 	You can switch the language of Yummy Yam from french to english in <em>config.toml</em> with <em>[params] language = "french / english"</em>. <br>
 	It changes the time format and texts in footer.  
 </p>
@@ -264,7 +270,7 @@
 				
 
 				
-<p class="paragraph">
+<p class="par">
 	This section is placed in second position because its weight is 2. 
 	All sections are sorted by weight. <br>
 
@@ -287,7 +293,6 @@
 
 </div>
 
- 
 <aside class="yummy-yam-corner-images"></aside>
 
 <footer class="footer">
@@ -297,7 +302,7 @@
 		
 			
 			
-			Dernière version publiée le 9 Mars 2023
+			Dernière version publiée le 10 Mars 2023
 		
 	</p>
 
@@ -314,12 +319,12 @@
 </footer>
 
 
-<script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="./css/fontawesome-6.2.1/js/all.min.js"></script>
-<script src="./js/jquery-3.6.3.min.js"></script>
-<script src="./js/yummy-yam.js"></script>
+<script src="css/fontawesome-6.2.1/js/all.min.js"></script>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/yummy-yam.js"></script>
 
-<script src="./js/custom-js.js"></script></body>
+<script src="js/custom-js.js"></script></body>
 
 </html>

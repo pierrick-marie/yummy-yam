@@ -12,90 +12,95 @@ const TIMELINE_PARAGRAPHS = $('.timeline .hide');
 $(document).ready(function () {
 
 	$(window).scroll(function () {
-		scrollFunction();
+		YummyYam.scrollHeaderFunction();
 	});
-	scrollFunction();	// call function after loading page
+	YummyYam.scrollHeaderFunction();	// call function after loading page
 
-	setupAvatarRotations();
+	YummyYam.setupAvatarRotations();
 
-	setupStars();
+	YummyYam.setupStars();
 
-	setupCornerImages();
+	YummyYam.setupCornerImages();
 });
 
-/**
- * Add small or large background corner images
- */
-function setupCornerImages() {
+var YummyYam = {
 
-	$('.yummy-yam-corner-images').append(`<img class="corner-image bottom-left large" alt="corner image bottom left" src="./img/theme/corner-left.png">
-		<img class="corner-image bottom-right large" alt="corner image bottom right" src="./img/theme/corner-right.png">`);
-}
+	/**
+	 * Add small or large background corner images
+	 */
+	setupCornerImages: function() {
 
-/**
- * Add stars in titles and paragraphs
- */
-function setupStars() {
+		var origin = window.location.origin;
 
-	$('.list-articles h1').addClass(CONTENT_TITLE);
+		$('.yummy-yam-corner-images').append(`<img class="corner-image bottom-left large" alt="corner image bottom left" src="./img/theme/corner-left.png">
+			<img class="corner-image bottom-right large" alt="corner image bottom right" src="./img/theme/corner-right.png">`);
+	},
 
-	// In titles h1
-	$(`<p class="star">⚝</p>`).insertBefore(CONTENT_TITLE);
-	$(`<p class="star">⚝</p>`).insertAfter(CONTENT_TITLE);
-}
+	/**
+	 * Add stars in titles and paragraphs
+	 */
+	setupStars: function() {
 
-/**
- * Setup avatar rotations:
- * 	- on click on navbar button
- * 	- on mouse over
- */
-function setupAvatarRotations() {
+		$('.list-articles h1').addClass(CONTENT_TITLE);
 
-	$(AVATAR_IMAGE).mouseenter(function () {	// mouse entre: rotate avatar
-		$(AVATAR_IMAGE).css('rotate', `-${ROTATION_ANGLE}`);
-	});
+		// In titles h1
+		$(`<p class="star">⚝</p>`).insertBefore(CONTENT_TITLE);
+		$(`<p class="star">⚝</p>`).insertAfter(CONTENT_TITLE);
+	},
 
-	$(AVATAR_IMAGE).mouseout(function () {	// mouse out: reset avatar rotation
-		$(AVATAR_IMAGE).css('rotate', '0deg');
-	});
+	/**
+	 * Setup avatar rotations:
+	 * 	- on click on navbar button
+	 * 	- on mouse over
+	 */
+	setupAvatarRotations: function() {
 
-	$('.banner .button').click(function () {	// on click on navbar button
-		rotateAvatar();
-	});
-}
+		$(AVATAR_IMAGE).mouseenter(function () {	// mouse entre: rotate avatar
+			$(AVATAR_IMAGE).css('rotate', `-${ROTATION_ANGLE}`);
+		});
 
-/**
- * Rotate avatar on expend navbar
- */
-function rotateAvatar() {
+		$(AVATAR_IMAGE).mouseout(function () {	// mouse out: reset avatar rotation
+			$(AVATAR_IMAGE).css('rotate', '0deg');
+		});
 
-	if (avatarIsRotated) {
-		$(AVATAR_IMAGE).css('rotate', '0deg');	// reset avatar rotation
-		avatarIsRotated = false;
-	} else {
-		$(AVATAR_IMAGE).css('rotate', `+${ROTATION_ANGLE}`);	// rotate avatar
-		avatarIsRotated = true;
-	}
-}
+		$('.banner .button').click(function () {	// on click on navbar button
+			rotateAvatar();
+		});
+	},
 
-/**
- * Fade out navbar after scroll down.
- * Fade in navbar if scroll to top page. 
- */
-function scrollFunction() {
+	/**
+	 * Rotate avatar on expend navbar
+	 */
+	rotateAvatar: function() {
 
-	const header = $('header');
-
-	var scroll = $(window).scrollTop();
-
-	if (false == headerIsHide && scroll > HEADER_HEIGHT) {
-		headerIsHide = true;
-		header.fadeOut(500);
-	} else {
-		if(true == headerIsHide && scroll <= HEADER_HEIGHT) {
-			headerIsHide = false;
-			header.fadeIn(500);
+		if (avatarIsRotated) {
+			$(AVATAR_IMAGE).css('rotate', '0deg');	// reset avatar rotation
+			avatarIsRotated = false;
+		} else {
+			$(AVATAR_IMAGE).css('rotate', `+${ROTATION_ANGLE}`);	// rotate avatar
+			avatarIsRotated = true;
 		}
-	}
-}
+	},
 
+	/**
+	 * Fade out navbar after scroll down.
+	 * Fade in navbar if scroll to top page. 
+	 */
+	scrollHeaderFunction: function() {
+
+		const header = $('header');
+
+		var scroll = $(window).scrollTop();
+
+		if (false == headerIsHide && scroll > HEADER_HEIGHT) {
+			headerIsHide = true;
+			header.fadeOut(500);
+		} else {
+			if(true == headerIsHide && scroll <= HEADER_HEIGHT) {
+				headerIsHide = false;
+				header.fadeIn(500);
+			}
+		}
+	},
+
+};
