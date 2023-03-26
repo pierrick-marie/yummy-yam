@@ -1,0 +1,29 @@
+$padding: 6em;
+
+.list-articles {
+	padding-top: $padding;
+	width: 50%;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	.article {
+
+		display: flex;
+
+		margin-bottom: $padding;
+
+		.thumbnail {
+			width: 40%;
+			border-radius: 10px;
+			margin-right: 3em;
+		}
+
+		.description {
+			text-align: center;
+			width: 60%;
+
+			padding: 1em;
+		}
+	}
+}

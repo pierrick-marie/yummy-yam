@@ -7,12 +7,46 @@
 	{{- partial "header.html" . -}}
 	
 	<div class="content text-center">
-	
-		<section class="section"> 
-			<h1 class="title">Sorry, the list of article is not supported yet :(</h1>
-		</section>
+
+		<div class="list-articles">
+
+			{{ range .Pages.ByDate.Reverse }}
+			
+				<section class="article">
+			
+					<img class="thumbnail" src="{{ .Params.thumbnail }}">
+
+					<div class="description">
+
+						<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+
+						<time>
+							{{ if ( eq .Site.Params.language "french" ) }}
+								{{ $monthNumber := ( printf "%d" .Date.Month ) }}
+								{{ $monthFr := index $.Site.Data.mois $monthNumber }}
+								{{ .Date.Day }} {{ $monthFr }} {{ .Date.Year }}
+							{{ else }}
+								{{ .Date.Format "02 January 2006" }}
+							{{ end }}
+						</time>
+
+						<p>{{  .Summary }}</p>
+
+						<!--
+						{{- $image := .Params.FeatureImage -}}
+						<img src="{{ $image }}">
+						-->
+				
+					</div>
+
+				</section>
+
+			{{ end }}
+
+		</div>
+
 	</div>
-	
+
 	{{- partial "footer.html" . -}}
 	
 	{{- partial "script.html" . -}}
