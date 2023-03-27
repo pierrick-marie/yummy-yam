@@ -10,7 +10,7 @@
 
 		<div class="list-articles">
 
-			{{ range .Pages.ByDate.Reverse }}
+			{{ range .Paginator.Pages.ByDate.Reverse }}
 			
 				<section class="article">
 			
@@ -42,6 +42,10 @@
 				</section>
 
 			{{ end }}
+
+			<nav class="pages">
+				{{ template "_internal/pagination.html" . }}
+			</nav>
 
 		</div>
 

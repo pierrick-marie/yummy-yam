@@ -8,14 +8,14 @@
 				<h3 class="title">Accueil</h3>
 				<i class="star">⚝</i>
 			</a>
-		{{ end }}
-
-		{{ range .Site.Menus.main.ByWeight }}
-			<a class="entry" href="{{ $.Site.BaseURL }}#{{ .URL }}">
-				<i class="star">⚝</i>
-				<h3 class="title">{{ .Name }}</h3>
-				<i class="star">⚝</i>
-			</a>
+		{{ else }}
+			{{ range .Site.Menus.main.ByWeight }}
+				<a class="entry" href="{{ $.Site.BaseURL }}#{{ .URL }}">
+					<i class="star">⚝</i>
+					<h3 class="title">{{ .Name }}</h3>
+					<i class="star">⚝</i>
+				</a>
+			{{ end }}
 		{{ end }}
 
 		<a class="entry" href="{{ $.Site.BaseURL }}/posts">

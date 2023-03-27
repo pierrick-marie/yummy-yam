@@ -42,18 +42,6 @@ $padding: 6em;
 				}
 			}
 
-			// h1 {
-			// 	font-size: 1.8em;
-				
-			// 	a {
-			// 		transition: 200ms;
-
-			// 		&:hover {
-			// 			color: $shadow;
-			// 		}
-			// 	}
-			// }
-
 			.date {
 				display: inline-block;
 				font-style: italic;
@@ -62,6 +50,25 @@ $padding: 6em;
 
 			.summary {
 				margin: 0;
+			}
+		}
+	}
+
+	.pages {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+
+		.pagination {
+			--bs-pagination-active-bg: #10639eee;
+			--bs-pagination-color: black;
+			--bs-pagination-active-border-color: #fff0;
+
+			display: flex;
+			justify-content: center;
+			
+			.page-item {
+				margin: 0.5em;
 			}
 		}
 	}
