@@ -3,22 +3,57 @@ $padding: 6em;
 .list-articles {
 	padding-top: $padding;
 	padding-bottom: $padding;
-	width: 50%;
+	width: 45%;
+
+	@media screen and (max-width: 799px) {
+		padding-top: 4em;
+		width: 70%;
+	}
+	@media screen and (min-width: 800px) and (max-width: 1200px) {
+		width: 70%;
+	}
+	@media screen and (min-width: 1201px) and (max-width: 2000px) {
+		width: 60%;
+	}
+	// @media screen and (min-width: 2001px) {
+	// 	@media (orientation: portrait) {
+	// 		width: 70%;
+	// 		height: 60em;
+	// 	}
+	// 	@media (orientation: landscape) {
+	// 		width: 50%;
+	// 		height: 60em;
+	// 	}
+	// }
 
 	margin-left: auto;
 	margin-right: auto;
 
-	.article {
+	.abstract-article {
 
-		display: flex;
+		// display: flex;
 
 		margin-bottom: $padding;
+		@media screen and (max-width: 799px) {
+			margin-bottom: 3em;
+		}
 
 		.thumbnail {
+			float: left;
 			width: auto;
 			max-height: 10em;
 			border-radius: 10px;
 			margin-right: 2em;
+
+			@media screen and (max-width: 799px) {
+				margin-right: 1em;
+				@media (orientation: portrait) {
+					max-height: 5em;
+				}
+				@media (orientation: landscape) {
+					max-height: 8em;
+				}
+			}
 		}
 
 		.thumbnail:hover {
@@ -28,11 +63,11 @@ $padding: 6em;
 
 		.description {
 			text-align: left;
-			width: 60%;
+			// width: 60%;
 
 			.article-title {
 				@extend .navbar-title;
-				
+					
 				.article-link {
 					transition: 200ms;
 
@@ -40,16 +75,31 @@ $padding: 6em;
 						color: $shadow;
 					}
 				}
+
+				@media screen and (max-width: 799px) {
+					margin: 0;
+					font-size: 1.1em;
+				}
 			}
 
 			.date {
 				display: inline-block;
 				font-style: italic;
 				margin-bottom: 0.5em;
+
+				@media screen and (max-width: 799px) {
+					margin-bottom: 0;
+					margin-top: 0;
+					font-size: 0.8em;
+				}
 			}
 
 			.summary {
 				margin: 0;
+
+				@media screen and (max-width: 799px) {
+					font-size: 0.9em;
+				}
 			}
 		}
 	}
@@ -57,7 +107,6 @@ $padding: 6em;
 	.pages {
 		margin-left: auto;
 		margin-right: auto;
-		width: 100%;
 
 		.pagination {
 			--bs-pagination-active-bg: #10639eee;
@@ -67,8 +116,17 @@ $padding: 6em;
 			display: flex;
 			justify-content: center;
 			
+			// width: 40%;
+
+			// li:nth-child(2) {  
+			// 	display: none;
+			// }
+			// li:nth-child(8) {  
+			// 	display: none;
+			// }
+
 			.page-item {
-				margin: 0.5em;
+				margin: 0.2em;
 			}
 		}
 	}
