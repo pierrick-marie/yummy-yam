@@ -2,6 +2,7 @@ $padding: 6em;
 
 .list-articles {
 	padding-top: $padding;
+	padding-bottom: $padding;
 	width: 50%;
 
 	margin-left: auto;
@@ -14,16 +15,54 @@ $padding: 6em;
 		margin-bottom: $padding;
 
 		.thumbnail {
-			width: 40%;
+			width: auto;
+			max-height: 10em;
 			border-radius: 10px;
-			margin-right: 3em;
+			margin-right: 2em;
+		}
+
+		.thumbnail:hover {
+			transition: 200ms;
+			transform: scale(1.05);
 		}
 
 		.description {
-			text-align: center;
+			text-align: left;
 			width: 60%;
 
-			padding: 1em;
+			.article-title {
+				@extend .navbar-title;
+				
+				.article-link {
+					transition: 200ms;
+
+					&:hover {
+						color: $shadow;
+					}
+				}
+			}
+
+			// h1 {
+			// 	font-size: 1.8em;
+				
+			// 	a {
+			// 		transition: 200ms;
+
+			// 		&:hover {
+			// 			color: $shadow;
+			// 		}
+			// 	}
+			// }
+
+			.date {
+				display: inline-block;
+				font-style: italic;
+				margin-bottom: 0.5em;
+			}
+
+			.summary {
+				margin: 0;
+			}
 		}
 	}
 }

@@ -14,13 +14,13 @@
 			
 				<section class="article">
 			
-					<img class="thumbnail" src="{{ .Params.thumbnail }}">
+					<a href="{{ .Permalink }}"><img class="thumbnail" alt="{{ .Title }}" src="{{ .Params.thumbnail }}"></a>
 
 					<div class="description">
 
-						<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+						<h1 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title }}</a></h1>
 
-						<time>
+						<time class="date">
 							{{ if ( eq .Site.Params.language "french" ) }}
 								{{ $monthNumber := ( printf "%d" .Date.Month ) }}
 								{{ $monthFr := index $.Site.Data.mois $monthNumber }}
@@ -30,7 +30,7 @@
 							{{ end }}
 						</time>
 
-						<p>{{  .Summary }}</p>
+						<p class="summary">{{  .Summary }}</p>
 
 						<!--
 						{{- $image := .Params.FeatureImage -}}
