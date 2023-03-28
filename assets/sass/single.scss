@@ -8,8 +8,13 @@ $padding: 2em;
 	margin-left: auto;
 	margin-right: auto;
 
+	padding-bottom: 5em;
+
 	@media screen and #{$phone} {
 		width: 70%;
+	}
+	@media screen and #{$tab-and-laptop} {
+		width: 60%;
 	}
 
 	.article-title {
@@ -24,7 +29,7 @@ $padding: 2em;
 	p {
 		@extend .paragraph;
 
-		margin-bottom: $padding;
+		margin-bottom: 1em;
 		text-align: justify;
 
 		img {
@@ -58,5 +63,30 @@ $padding: 2em;
 		a {
 			@extend .link;
 		}
+	}
+
+	li {
+		text-align: left;
+	}
+
+	pre {
+		text-align: left;
+		padding: 0.5em;
+		background-color: #24272ba1 !important;
+		border-radius: 10px;
+		border-color: $dark;
+		border-width: 1px;
+		border-style: solid;
+
+		code {
+			span {
+				color: #a6e22e !important;
+			}
+		}
+	}
+
+	h2 {
+		text-align: left;
+		padding-left: 1em;
 	}
 }

@@ -38,6 +38,7 @@ $padding: 6em;
 			max-height: 10em;
 			border-radius: 10px;
 			margin-right: 2em;
+			box-shadow: 3px 3px 3px black;
 
 			@media screen and #{$phone} {
 				margin-right: 1em;
@@ -84,24 +85,11 @@ $padding: 6em;
 				display: inline-block;
 				font-style: italic;
 				margin-bottom: 0.5em;
-
-				// @media screen and #{$phone} {
-				// 	margin-bottom: 0;
-				// 	margin-top: 0;
-				// 	font-size: 0.8em;
-				// }
 			}
 
 			.summary {
 				margin: 0;
 				@extend .paragraph;
-
-				// @media screen and #{$phone} {
-				// 	font-size: 0.9em;
-				// }
-				// @media screen and #{$tv} {
-				// 	font-size: 2em;
-				// }
 			}
 		}
 	}
