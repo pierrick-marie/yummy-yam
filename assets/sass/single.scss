@@ -8,12 +8,18 @@ $padding: 2em;
 	margin-right: auto;
 	padding-bottom: 5em;
 
+	@media screen and (max-width: 799px) {
+		width: 70%;
+	}
+
 	.article-title {
 		padding-top: $padding;
 		margin-bottom: $padding;
 	}
 
 	p {
+		@extend .paragraph;
+
 		margin-bottom: $padding;
 		text-align: justify;
 
@@ -28,6 +34,21 @@ $padding: 2em;
 
 			border-radius: 5px;
 			box-shadow: 5px 5px 5px $dark;
+
+			@media screen and (max-width: 799px) {
+				width: 55%;
+			}
+			@media screen and (min-width: 800px) and (max-width: 1200px) {
+				width: 60%;
+			}
+			@media screen and (min-width: 1201px) and (max-width: 2000px) {
+			}
+			@media screen and (min-width: 2001px) {
+				@media (orientation: portrait) {
+				}
+				@media (orientation: landscape) {
+				}
+			}
 		}
 
 		a {
