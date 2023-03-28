@@ -37,3 +37,9 @@ $huge-up: 4.5em;
 
 $jumbo: 5em;
 $jumbo-up: 5.5em;
+
+$phone: "(max-width: 799px)";
+$tablet: "(min-width: 800px) and (max-width: 1200px)";
+$laptop: "(min-width: 1201px) and (max-width: 2000px)";
+$tab-and-laptop: "(min-width: 800px) and (max-width: 2000px)";
+$tv: "(min-width: 2001px)";

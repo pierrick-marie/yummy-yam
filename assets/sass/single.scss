@@ -3,18 +3,22 @@ $padding: 2em;
 .full-article {
 
 	width: 50%;
+	height: max-content;
 
 	margin-left: auto;
 	margin-right: auto;
-	padding-bottom: 5em;
 
-	@media screen and (max-width: 799px) {
+	@media screen and #{$phone} {
 		width: 70%;
 	}
 
 	.article-title {
-		padding-top: $padding;
-		margin-bottom: $padding;
+		padding-top: 1em;
+		margin-bottom: 1em;
+
+		@media screen and #{$tv} {
+			padding-top: 2em;
+		}
 	}
 
 	p {
@@ -35,15 +39,15 @@ $padding: 2em;
 			border-radius: 5px;
 			box-shadow: 5px 5px 5px $dark;
 
-			@media screen and (max-width: 799px) {
+			@media screen and #{$phone} {
 				width: 55%;
 			}
-			@media screen and (min-width: 800px) and (max-width: 1200px) {
+			@media screen and #{$tablet} {
 				width: 60%;
 			}
-			@media screen and (min-width: 1201px) and (max-width: 2000px) {
+			@media screen and #{$laptop} {
 			}
-			@media screen and (min-width: 2001px) {
+			@media screen and #{$tv} {
 				@media (orientation: portrait) {
 				}
 				@media (orientation: landscape) {
