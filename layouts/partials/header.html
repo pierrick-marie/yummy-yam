@@ -2,27 +2,21 @@
 
 	<div id="navbarToggleExternalContent" class="collapse menu m-0">
 
-		{{ if ( not $.IsHome ) }}
-			<a class="entry" href="{{ $.Site.BaseURL }}">
+		{{ range $.Site.Menus.main.ByWeight }}
+			<a class="entry" href="{{ $.Site.BaseURL }}#{{ .URL }}">
 				<i class="star">⚝</i>
-				<h3 class="title">Accueil</h3>
+				<h3 class="title">{{ .Name }}</h3>
 				<i class="star">⚝</i>
 			</a>
-		{{ else }}
-			{{ range .Site.Menus.main.ByWeight }}
-				<a class="entry" href="{{ $.Site.BaseURL }}#{{ .URL }}">
-					<i class="star">⚝</i>
-					<h3 class="title">{{ .Name }}</h3>
-					<i class="star">⚝</i>
-				</a>
-			{{ end }}
 		{{ end }}
 
-		<a class="entry" href="{{ $.Site.BaseURL }}/posts">
-			<i class="star">⚝</i>
-			<h3 class="title">Articles publiés</h3>
-			<i class="star">⚝</i>
-		</a>
+		{{ range $.Site.Menus.pages.ByWeight }}
+			<a class="entry" href="{{ $.Site.BaseURL }}/{{ .URL }}">
+				<i class="star">⚝</i>
+				<h3 class="title">{{ .Name }}</h3>
+				<i class="star">⚝</i>
+			</a>
+		{{ end }}
 
 	</div>
 
