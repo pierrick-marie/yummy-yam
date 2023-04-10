@@ -27,14 +27,14 @@ Yummy Yam provides:
 
 ## 1. Create a new Hugo site
 
-```shell
+```sh
 cd my_new_web_site
 hugo new site ./
 ```
 
 ## 2. Import last version of Yummy Yam
 
-```shell 
+```sh 
 # From "my_new_web_site"
 cd themes
 git clone https://github.com/pierrick-marie/yummy-yam.git
@@ -42,7 +42,7 @@ git clone https://github.com/pierrick-marie/yummy-yam.git
 
 ## 3. Setup your web site with the example from Yummy Yam
 
-```shell
+```sh
 # From "my_new_web_site/theme"
 cp yummy-yam/example/* ../
 ```
@@ -53,7 +53,7 @@ This command initializes a default configuration for your web site, adds default
 
 To create your web site use the following command:
 
-```shell
+```sh
 # From "my_new_web_site"
 hugo server
 ```
@@ -64,7 +64,7 @@ Your web site is now available at this address: http://localhost:1313
 
 To export your site a static web site use the following command:
 
-```shell
+```sh
 # From "my_new_web_site"
 hugo --cleanDestinationDir
 ```

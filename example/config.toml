@@ -1,4 +1,4 @@
-baseURL = ''
+baseURL = 'https://my-web-site.io/'
 languageCode = 'fr-FR'
 title = 'Web site title'
 theme = 'yummy-yam'
@@ -9,12 +9,15 @@ enableRobotsTXT = true
 
 contentDir = 'content'
 
+paginate = 4
+
 [params]
 	author = "Author"
+	subtitle = "Subtitle"
 	description = "Web site description"
 	keywords = "key, words"
 	customJS = "custom-js.js"
-	language = "french"
+	timeFormat = "french"
 
 [menu]
 	[[menu.main]]
