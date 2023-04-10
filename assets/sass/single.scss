@@ -1,0 +1,92 @@
+$padding: 2em;
+
+.full-article {
+
+	width: 50%;
+	height: max-content;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	padding-bottom: 5em;
+
+	@media screen and #{$phone} {
+		width: 70%;
+	}
+	@media screen and #{$tab-and-laptop} {
+		width: 60%;
+	}
+
+	.article-title {
+		padding-top: 1em;
+		margin-bottom: 1em;
+
+		@media screen and #{$tv} {
+			padding-top: 2em;
+		}
+	}
+
+	p {
+		@extend .paragraph;
+
+		margin-bottom: 1em;
+		text-align: justify;
+
+		img {
+			width: 40%;
+			height: auto;
+
+			float: left;
+
+			margin-right: $padding;
+			margin-bottom: $padding;
+
+			border-radius: 5px;
+			box-shadow: 5px 5px 5px $dark;
+
+			@media screen and #{$phone} {
+				width: 55%;
+			}
+			@media screen and #{$tablet} {
+				width: 60%;
+			}
+			@media screen and #{$laptop} {
+			}
+			@media screen and #{$tv} {
+				@media (orientation: portrait) {
+				}
+				@media (orientation: landscape) {
+				}
+			}
+		}
+
+		a {
+			@extend .link;
+		}
+	}
+
+	li {
+		text-align: left;
+	}
+
+	pre {
+		text-align: left;
+		padding: 0.5em;
+		background-color: #24272ba1 !important;
+		border-radius: 10px;
+		border-color: $dark;
+		border-width: 1px;
+		border-style: solid;
+
+		code {
+			span {
+				color: #a6e22e !important;
+			}
+		}
+	}
+
+	h2 {
+		text-align: left;
+		padding-left: 1em;
+	}
+}

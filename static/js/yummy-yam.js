@@ -30,8 +30,8 @@ var YummyYam = {
 	 */
 	setupCornerImages: function() {
 
-		$('.yummy-yam-corner-images').append(`<img class="corner-image bottom-left large" alt="corner image bottom left" src="./img/theme/corner-left.png">
-			<img class="corner-image bottom-right large" alt="corner image bottom right" src="./img/theme/corner-right.png">`);
+		$('.yummy-yam-corner-images').append(`<img class="corner-image bottom-left large" alt="corner image bottom left" src="/img/theme/corner-left.png">
+			<img class="corner-image bottom-right large" alt="corner image bottom right" src="/img/theme/corner-right.png">`);
 	},
 
 	/**
@@ -61,8 +61,8 @@ var YummyYam = {
 			$(AVATAR_IMAGE).css('rotate', '0deg');
 		});
 
-		$('.banner .button').click(function () {	// on click on navbar button
-			rotateAvatar();
+		$('.navbar .banner .button').click(function () {	// on click on navbar button
+			YummyYam.rotateAvatar();
 		});
 	},
 

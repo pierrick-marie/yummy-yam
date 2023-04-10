@@ -6,7 +6,7 @@
 	}
 	@else {
 		@if ($screen == desktop) {
-			$height: 5.5em;;
+			$height: 5.5em;
 		}
 	}
 
@@ -17,13 +17,13 @@
 	text-shadow: 0 0 0 transparent;
 	color: $dark;
 
-	@media screen and (max-width: 799px) {
+	@media screen and #{$phone} {
 		font-size: $normal;
 	}
-	@media screen and (min-width: 800px) and (max-width: 2000px) {
+	@media screen and #{$tab-and-laptop} {
 		font-size: $normal-huge;
 	}
-	@media screen and (min-width: 2001px) {
+	@media screen and #{$tv} {
 		font-size: $larger-up;
 	}
 }
@@ -46,13 +46,13 @@
 		width: 100%;
 
 		padding: 0;
-		@media screen and (max-width: 799px) {
+		@media screen and #{$phone} {
 			padding-left: 3em;
 		}
-		@media screen and (min-width: 800px) and (max-width: 2000px) {
+		@media screen and #{$tab-and-laptop} {
 			padding-left: 1.5em;
 		}
-		@media screen and (min-width: 2001px) {
+		@media screen and #{$tv} {
 			padding-left: 1.5em;
 		}
 
@@ -82,7 +82,7 @@
 				@extend .navbar-title;
 			}
 
-			@media screen and (max-width: 799px) {
+			@media screen and #{$phone} {
 				.star {
 					display: none;
 				}
@@ -117,13 +117,13 @@
 		display: flex;
 		justify-content: space-between;
 
-		@media screen and (max-width: 799px) {
+		@media screen and #{$phone} {
 			height: bannerHeight(mobile);
 		}
-		@media screen and (min-width: 800px) and (max-width: 2000px) {
+		@media screen and #{$tab-and-laptop} {
 			height: bannerHeight(desktop);
 		}
-		@media screen and (min-width: 2001px) {
+		@media screen and #{$tv} {
 			height: bannerHeight(tv);
 		}
 
@@ -152,17 +152,17 @@
 
 			box-shadow: 6px 6px 6px $gray-600;
 			
-			@media screen and (max-width: 799px) {
+			@media screen and #{$phone} {
 				font-size: $small;
 				width: 3em;
 				height: 3.5em;
 			}
-			@media screen and (min-width: 800px) and (max-width: 2000px) {
+			@media screen and #{$tab-and-laptop} {
 				font-size: $normal-huge;
 				width: 2.2em;
 				height: 2.2em;
 			}
-			@media screen and (min-width: 2001px) {
+			@media screen and #{$tv} {
 				font-size: $huge;
 				
 				width: 1.5em;
@@ -185,19 +185,19 @@
 				height: auto;
 				transition: 500ms;
 			}
-			@media screen and (max-width: 799px) {
+			@media screen and #{$phone} {
 				.img {
 					width: 5em;
 				}
 			}
 	
-			@media screen and (min-width: 800px) and (max-width: 2000px) {
+			@media screen and #{$tab-and-laptop} {
 				.img {
 					width: 6em;
 				}
 			}
 	
-			@media screen and (min-width: 2001px) {
+			@media screen and #{$tv} {
 				.img {
 					width: 12em;
 				}
@@ -218,11 +218,13 @@
 				}
 			}
 
-			@media screen and (max-width: 799px) and (orientation: portrait) {
-				font-size: 0.9em;
+			@media screen and #{$phone} {
+				@media (orientation: portrait) {
+					font-size: 0.9em;
+				}
 			}
 
-			@media screen and (min-width: 2001px) {
+			@media screen and #{$tv} {
 				margin-right: 2em;
 			}
 		}

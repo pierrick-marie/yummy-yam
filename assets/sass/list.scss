@@ -1,0 +1,136 @@
+$padding: 6em;
+
+.list-articles {
+	padding-top: $padding;
+	width: 45%;
+
+	@media screen and #{$phone} {
+		padding-top: 4em;
+		width: 70%;
+	}
+	@media screen and #{$tablet} {
+		width: 70%;
+	}
+	@media screen and #{$laptop} {
+		width: 60%;
+	}
+	@media screen and #{$tv} {
+		padding-top: 10em;
+	}
+
+	margin-left: auto;
+	margin-right: auto;
+
+	.abstract-article {
+
+		margin-bottom: $padding;
+		@media screen and #{$phone} {
+			margin-bottom: 3em;
+		}
+
+		@media screen and #{$tv} {
+			margin-bottom: 10em;
+		}
+
+		.thumbnail {
+			float: left;
+			width: auto;
+			max-height: 10em;
+			border-radius: 10px;
+			margin-right: 2em;
+			box-shadow: 3px 3px 3px black;
+
+			@media screen and #{$phone} {
+				margin-right: 1em;
+				@media (orientation: portrait) {
+					max-height: 5em;
+				}
+				@media (orientation: landscape) {
+					max-height: 8em;
+				}
+			}
+			@media screen and #{$tv} {
+				max-height: 15em;
+			}
+		}
+
+		.thumbnail:hover {
+			transition: 200ms;
+			transform: scale(1.05);
+		}
+
+		.description {
+			text-align: left;
+
+			.article-title {
+				@extend .navbar-title;
+					
+				.article-link {
+					transition: 200ms;
+
+					&:hover {
+						color: $shadow;
+					}
+				}
+
+				@media screen and #{$phone} {
+					margin: 0;
+					font-size: 1.1em;
+				}
+			}
+
+			.date {
+				@extend .paragraph;
+
+				display: inline-block;
+				font-style: italic;
+				margin-bottom: 0.5em;
+			}
+
+			.summary {
+				margin: 0;
+				@extend .paragraph;
+			}
+		}
+	}
+}
+
+.pages {
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and #{$phone} {
+		padding-bottom: 4em;
+	}
+	@media screen and #{$tablet} {
+		padding-bottom: 8em;
+	}
+	@media screen and #{$laptop} {
+		padding-bottom: 8em;
+	}
+	@media screen and #{$tv} {
+		padding-bottom: 10em;
+	}
+
+	.pagination {
+		--bs-pagination-active-bg: #10639eee;
+		--bs-pagination-color: black;
+		--bs-pagination-active-border-color: #fff0;
+
+		display: flex;
+		justify-content: center;
+		
+		.page-item {
+			margin: 0.2em;
+
+			.page-link {
+				@media screen and #{$phone} {
+					font-size: 0.8em;
+				}
+				@media screen and #{$tv} {
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+}

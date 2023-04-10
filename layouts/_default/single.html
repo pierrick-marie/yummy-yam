@@ -8,9 +8,12 @@
 	
 	<div class="content text-center">
 	
-		<section class="section"> 
-			<h1 class="title">Sorry, articles are not supported yet :(</h1>
+		<section class="full-article"> 
+			<h1 class="article-title">{{ .Title }}</h1>
+
+			{{ .Content }}
 		</section>
+		
 	</div>
 	
 	{{- partial "footer.html" . -}}

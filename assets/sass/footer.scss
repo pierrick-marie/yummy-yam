@@ -1,6 +1,17 @@
-$footer-height-small: 30px;
-$footer-height-normal: 45px;
-$footer-height-large: 90px;
+@function footerHeight($screen: laptop) {
+	$height: 50px; // tablet and laptop
+    
+	@if ($screen == phone) {
+		$height: 40px;
+	}
+	@else {
+		@if ($screen == tv) {
+			$height: 100px;
+		}
+	}
+
+	@return $height;
+}
 
 .footer {
 	position: fixed;
@@ -24,7 +35,10 @@ $footer-height-large: 90px;
 	z-index: 100;
 
 	.text {
-		@media screen and (max-width: 799px) {
+		margin-top: auto;
+		margin-bottom: auto;
+
+		@media screen and #{$phone} {
 			font-size: 0.5em;
 		}
 	}
@@ -37,16 +51,16 @@ $footer-height-large: 90px;
 		text-align: right;
 	}
 
-	@media screen and (max-width: 799px) {
-		height: $footer-height-small;
+	@media screen and #{$phone} {
+		height: footerHeight(phone);
 		font-size: 0.9em;
 	}
-	@media screen and (min-width: 800px) and (max-width: 2000px) {
-		height: $footer-height-normal;
+	@media screen and #{$tab-and-laptop} {
+		height: footerHeight(laptop);
 		font-size: $small;
 	}
-	@media screen and (min-width: 2001px) {
-		height: $footer-height-large;
+	@media screen and #{$tv} {
+		height: footerHeight(tv);
 		font-size: $normal-huge;
 		padding-left: 15px;
 		padding-right: 15px;
@@ -57,17 +71,17 @@ $footer-height-large: 90px;
 	filter: drop-shadow(0 0 1rem $shadow);
 	position: fixed;
 	
-	@media screen and (max-width: 799px) {
-		bottom: $footer-height-small;
+	@media screen and #{$phone} {
+		bottom: footerHeight(phone);
 		width: 10%;
 	}
-	@media screen and (min-width: 800px) and (max-width: 2000px) {
-		bottom: $footer-height-normal;
+	@media screen and #{$tab-and-laptop} {
+		bottom: footerHeight(laptop);
 		width: 6%;
 	}
-	@media screen and (min-width: 2001px) {
+	@media screen and #{$tv} {
 		width: 6%;
-		bottom: $footer-height-large;
+		bottom: footerHeight(tv);
 	}	
 }
 
