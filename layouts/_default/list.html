@@ -5,41 +5,48 @@
 
 <body>
 	{{- partial "header.html" . -}}
-	
+
 	<div class="content text-center">
 
 		<div class="list-articles">
 
 			{{ range .Paginator.Pages.ByDate.Reverse }}
-			
-				<section class="abstract-article">
-			
-					<a href="{{ .Permalink }}"><img class="thumbnail" alt="{{ .Title }}" src="{{ .Params.thumbnail }}"></a>
 
-					<div class="description">
+			<section class="abstract-article">
 
-						<h1 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+				<a href="{{ .Permalink }}"><img class="thumbnail" alt="{{ .Title }}" src="{{ .Params.thumbnail }}"></a>
 
+				<div class="description">
+
+					<h1 class="article-title"><a class="article-link" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+
+					<p class="time">
 						<time class="date">
 							{{ if ( eq .Site.Params.language "french" ) }}
-								{{ $monthNumber := ( printf "%d" .Date.Month ) }}
-								{{ $monthFr := index $.Site.Data.mois $monthNumber }}
-								{{ .Date.Day }} {{ $monthFr }} {{ .Date.Year }}
+							{{ $monthNumber := ( printf "%d" .Date.Month ) }}
+							{{ $monthFr := index $.Site.Data.mois $monthNumber }}
+							{{ .Date.Day }} {{ $monthFr }} {{ .Date.Year }}
 							{{ else }}
-								{{ .Date.Format "02 January 2006" }}
+							{{ .Date.Format "02 January 2006" }}
 							{{ end }}
 						</time>
 
-						<p class="summary">{{  .Summary }}</p>
+						{{ $readTime := mul (div (countwords .Content) 220.0) 60 }}
+						{{ $minutes := math.Floor (div $readTime 60) }}
 
-						<!--
+						- {{ $minutes }} {{ cond (eq $minutes 1) "minute" "minutes" }}
+					</p>
+
+					<p class="summary">{{ .Summary }}</p>
+
+					<!--
 						{{- $image := .Params.FeatureImage -}}
 						<img src="{{ $image }}">
 						-->
-				
-					</div>
 
-				</section>
+				</div>
+
+			</section>
 
 			{{ end }}
 
@@ -52,7 +59,7 @@
 	</div>
 
 	{{- partial "footer.html" . -}}
-	
+
 	{{- partial "script.html" . -}}
 </body>
 

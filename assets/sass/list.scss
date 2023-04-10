@@ -79,12 +79,16 @@ $padding: 6em;
 				}
 			}
 
-			.date {
-				@extend .paragraph;
+			.time {
+				margin: 0;
 
-				display: inline-block;
-				font-style: italic;
-				margin-bottom: 0.5em;
+				.date {
+					@extend .paragraph;
+	
+					display: inline-block;
+					font-style: italic;
+					margin-bottom: 0.5em;
+				}
 			}
 
 			.summary {
