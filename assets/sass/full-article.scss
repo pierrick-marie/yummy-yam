@@ -10,8 +10,6 @@ $padding: 2em;
 
 	padding-bottom: 5em;
 
-	// text-align: left;
-
 	@media screen and #{$phone} {
 		width: 70%;
 	}
@@ -84,10 +82,6 @@ $padding: 2em;
 			width: 20%;
 			margin-right: 3em;
 			margin-bottom: 3em;
-
-			@media (orientation: portrait) {}
-
-			@media (orientation: landscape) {}
 		}
 	}
 
