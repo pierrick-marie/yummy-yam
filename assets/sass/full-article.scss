@@ -15,21 +15,18 @@ $padding: 2em;
 	@media screen and #{$phone} {
 		width: 70%;
 	}
+
 	@media screen and #{$tab-and-laptop} {
 		width: 60%;
 	}
+
 	@media screen and #{$tv} {
 		padding-bottom: 10em;
-	}
 
-	// .thumbnail {
-	// 	float: left;
-	// 	width: 40%;
-	// 	height: auto;
-	// 	margin: 0;
-	// 	margin-right: 1em;
-	// 	margin-bottom: 1em;
-	// }
+		@media (orientation: landscape) {
+			width: 40%;
+		}
+	}
 
 	.article-title {
 		padding-top: 1em;
@@ -44,7 +41,6 @@ $padding: 2em;
 	p {
 		@extend .paragraph;
 
-		margin-bottom: 1em;
 		text-align: justify;
 		font-size: 1em;
 
@@ -55,7 +51,6 @@ $padding: 2em;
 			float: left;
 
 			margin-right: $padding;
-			margin-bottom: $padding;
 
 			border-radius: 5px;
 			box-shadow: 0 0 15px $dark;
@@ -63,16 +58,9 @@ $padding: 2em;
 			@media screen and #{$phone} {
 				width: 55%;
 			}
+
 			@media screen and #{$tablet} {
 				width: 60%;
-			}
-			@media screen and #{$laptop} {
-			}
-			@media screen and #{$tv} {
-				@media (orientation: portrait) {
-				}
-				@media (orientation: landscape) {
-				}
 			}
 		}
 
@@ -81,8 +69,30 @@ $padding: 2em;
 		}
 	}
 
+	.feature-image {
+		width: 30%;
+		height: auto;
+
+		float: left;
+
+		margin-right: 1.5em;
+
+		border-radius: 5px;
+		box-shadow: 0 0 15px $dark;
+
+		@media screen and #{$tv} {
+			width: 20%;
+			margin-right: 3em;
+			margin-bottom: 3em;
+
+			@media (orientation: portrait) {}
+
+			@media (orientation: landscape) {}
+		}
+	}
+
 	em {
-		font-size: 1em; 
+		font-size: 1em;
 	}
 
 	li {
