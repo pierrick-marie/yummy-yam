@@ -17,7 +17,7 @@ paginate = 4
 	description = "Web site description"
 	keywords = "key, words"
 	customJS = "custom-js.js"
-	timeFormat = "french"
+	language = "english"
 
 [menu]
 	[[menu.main]]

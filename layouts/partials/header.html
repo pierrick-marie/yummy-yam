@@ -3,27 +3,27 @@
 	<div id="navbarToggleExternalContent" class="collapse menu m-0">
 
 		{{ range $.Site.Menus.main.ByWeight }}
-			<a class="entry" href="{{ $.Site.BaseURL }}#{{ .URL }}">
-				<i class="star">⚝</i>
-				<h3 class="title">{{ .Name }}</h3>
-				<i class="star">⚝</i>
-			</a>
+		<a class="entry" href="{{ $.Site.BaseURL }}#{{ .URL }}">
+			<i class="star">⚝</i>
+			<h3 class="title">{{ .Name }}</h3>
+			<i class="star">⚝</i>
+		</a>
 		{{ end }}
 
 		{{ range $.Site.Menus.pages.ByWeight }}
-			<a class="entry" href="{{ $.Site.BaseURL }}/{{ .URL }}">
-				<i class="star">⚝</i>
-				<h3 class="title">{{ .Name }}</h3>
-				<i class="star">⚝</i>
-			</a>
+		<a class="entry" href="{{ $.Site.BaseURL }}/{{ .URL }}">
+			<i class="star">⚝</i>
+			<h3 class="title">{{ .Name }}</h3>
+			<i class="star">⚝</i>
+		</a>
 		{{ end }}
 
 	</div>
 
 	<nav class="banner">
 		<div class="flex-container left">
-			<button class="button" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent">
+			<button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+				aria-controls="navbarToggleExternalContent">
 				<span class="icon fa-solid fa-bars"></span>
 			</button>
 		</div>
@@ -35,9 +35,17 @@
 		</div>
 
 		<div class="flex-container right">
-			<a class="home" href="{{ $.Site.BaseURL }}/a-propos">
+
+			{{ if ( eq .Site.Params.language "french" ) }}
+			<a class="home" href="{{ $.Site.BaseURL }}/about">
 				<h1 class="title">À propos</h1>
 			</a>
+			{{ else }}
+			<a class="home" href="{{ $.Site.BaseURL }}/about">
+				<h1 class="title">About</h1>
+			</a>
+			{{ end }}
+
 		</div>
 	</nav>
 
