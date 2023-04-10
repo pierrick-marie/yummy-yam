@@ -21,20 +21,20 @@ paginate = 4
 
 [menu]
 	[[menu.main]]
-		name = 'Projets'
-		url = '#projects'
+		name = 'Images and so on'
+		url = 'images'
 		weight = 1
 	[[menu.main]]
-		name = 'Technologies'
-		url = '#technologies'
+		name = 'Languages'
+		url = 'languages'
 		weight = 2
 	[[menu.main]]
-		name = 'Contacts'
-		url = '#contacts'
+		name = 'config.toml'
+		url = 'config'
 		weight = 3
 	[[menu.main]]
-		name = 'Articles publiés'
-		url = 'posts'
+		name = 'Last section'
+		url = 'last'
 		weight = 4
 
 [sitemap]
