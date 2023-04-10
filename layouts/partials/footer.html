@@ -1,16 +1,31 @@
-<!-- BLOCK: add large corner images -->
 <aside class="yummy-yam-corner-images"></aside>
 
 <footer class="footer">
 	<p class="text left"> 
 		{{ $.Site.Params.author }} <br> 
-		Last build: {{ now.Format "01 January 2006" }}
+		
+		{{ if ( eq .Site.Params.language "french" ) }}
+			{{ $monthNumber := ( printf "%d" now.Month ) }}
+			{{ $monthFr := index $.Site.Data.mois $monthNumber }}
+			Dernière version publiée le {{ now.Day }} {{ $monthFr }} {{ now.Year }}
+		{{ else }}
+			Last build: {{ now.Format "02 January 2006" }}
+		{{ end }}
 	</p>
 
-	<p class="text right"> 
-		Site propulsé par <a class="link" href="https://gohugo.io/commands/hugo_server/">Hugo serveur</a> avec le thème <a
-		class="link" href="https://github.com/pierrick-marie/yummy-yam">Yummy Yam</a> <br>
-		Hébergé par <a class="link" href="https://pages.github.com/">Github Pages</a> 
+	<p class="text right">
+		{{ if ( eq .Site.Params.language "french" ) }}
+			Site propulsé par <a class="link" href="https://gohugo.io/commands/hugo_server/">Hugo serveur</a> avec le thème <a
+			class="link" href="https://github.com/pierrick-marie/yummy-yam">Yummy Yam</a> <br>
+			Hébergé par <a class="link" href="https://pages.github.com/">Github Pages</a> 
+		{{ else }}
+			A <a class="link" href="https://gohugo.io/commands/hugo_server/">Hugo serveur</a> web site with <a
+			class="link" href="https://github.com/pierrick-marie/yummy-yam">Yummy Yam</a> theme. <br>
+			Hosted by <a class="link" href="https://pages.github.com/">Github Pages</a> 
+		{{ end }}
+
+
+		
 	</p>
 </footer>
 

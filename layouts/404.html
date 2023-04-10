@@ -1,17 +1,22 @@
-<!-- The base of all pages -->
 <!DOCTYPE html>
 <html lang="fr-FR">
 
 {{- partial "head.html" . -}}
 
 <body>
-	<div class="body error-404">
-		<h1>😱 Oups, 404 error!</h1>
-		<a href="https://pierrick-marie.github.io/">Go back to the main page</a>
+	{{- partial "header.html" . -}}
+	
+	<div class="content text-center">
+	
+		<section class="section"> 
+			<h1>😱 Oups, 404 error!</h1>
+			<a class="link" href="{{ $.Site.BaseURL }}">Go back to the main page</a>
+		</section>
 	</div>
-
+	
 	{{- partial "footer.html" . -}}
-
+	
+	{{- partial "script.html" . -}}
 </body>
 
 </html>

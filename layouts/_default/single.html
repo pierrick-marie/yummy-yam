@@ -1,4 +1,21 @@
-<!-- Display a single post -->
-<h1>One article</h1>
+<!DOCTYPE html>
+<html lang="fr-FR">
 
-{{ .Content }}
+{{- partial "head.html" . -}}
+
+<body>
+	{{- partial "header.html" . -}}
+	
+	<div class="content text-center">
+	
+		<section class="section"> 
+			<h1 class="title">Sorry, articles are not supported yet :(</h1>
+		</section>
+	</div>
+	
+	{{- partial "footer.html" . -}}
+	
+	{{- partial "script.html" . -}}
+</body>
+
+</html>

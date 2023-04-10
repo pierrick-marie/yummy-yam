@@ -1,9 +1,6 @@
 const HEADER_HEIGHT = $('header').height(); // The height of the navbar
 var headerIsHide = false;
 
-const TECHNOLOGIES_TOP = $('#technologies .cv').first().offset().top;
-var technologiesAreHide = true;
-
 const ROTATION_ANGLE = "15deg";
 var avatarIsRotated = false;	// status of avatar: rotated or not
 
@@ -15,131 +12,93 @@ const TIMELINE_PARAGRAPHS = $('.timeline .hide');
 $(document).ready(function () {
 
 	$(window).scroll(function () {
-		scrollFunction();
+		YummyYam.scrollHeaderFunction();
 	});
-	scrollFunction();	// call function after loading page
+	YummyYam.scrollHeaderFunction();	// call function after loading page
 
-	setupAvatarRotations();
+	YummyYam.setupAvatarRotations();
 
-	setupStars();
+	YummyYam.setupStars();
 
-	setupNavArrow();
-
-	setupCornerImages();
-
-	fadeInTimeline();
+	YummyYam.setupCornerImages();
 });
 
-/**
- * Fade in timeline
- */
-function fadeInTimeline() {
+var YummyYam = {
 
-	var index = 0;
+	/**
+	 * Add small or large background corner images
+	 */
+	setupCornerImages: function() {
 
-	(function fadeInTimelineParagraph() {
-		TIMELINE_PARAGRAPHS.eq(index++).fadeIn(300, fadeInTimelineParagraph);
+		$('.yummy-yam-corner-images').append(`<img class="corner-image bottom-left large" alt="corner image bottom left" src="./img/theme/corner-left.png">
+			<img class="corner-image bottom-right large" alt="corner image bottom right" src="./img/theme/corner-right.png">`);
+	},
 
-	})();
-}
+	/**
+	 * Add stars in titles and paragraphs
+	 */
+	setupStars: function() {
 
-/**
- * Add small or large background corner images
- */
-function setupCornerImages() {
+		$('.list-articles h1').addClass(CONTENT_TITLE);
 
-	var origin = window.location.origin;
+		// In titles h1
+		$(`<p class="star">⚝</p>`).insertBefore(CONTENT_TITLE);
+		$(`<p class="star">⚝</p>`).insertAfter(CONTENT_TITLE);
+	},
 
-	$('.yummy-yam-corner-images').append(`
-		<img class="corner-image bottom-left large" alt="corner image bottom left" src="${origin}/img/theme/corner-left.png">
-		<img class="corner-image bottom-right large" alt="corner image bottom right" src="${origin}/img/theme/corner-right.png">`);
-}
+	/**
+	 * Setup avatar rotations:
+	 * 	- on click on navbar button
+	 * 	- on mouse over
+	 */
+	setupAvatarRotations: function() {
 
-/**
- * Add stars in titles and paragraphs
- */
-function setupStars() {
+		$(AVATAR_IMAGE).mouseenter(function () {	// mouse entre: rotate avatar
+			$(AVATAR_IMAGE).css('rotate', `-${ROTATION_ANGLE}`);
+		});
 
-	$('.list-articles h1').addClass(CONTENT_TITLE);
+		$(AVATAR_IMAGE).mouseout(function () {	// mouse out: reset avatar rotation
+			$(AVATAR_IMAGE).css('rotate', '0deg');
+		});
 
-	// In titles h1
-	$(`<p class="star">⚝</p>`).insertBefore(CONTENT_TITLE);
-	$(`<p class="star">⚝</p>`).insertAfter(CONTENT_TITLE);
-}
+		$('.banner .button').click(function () {	// on click on navbar button
+			rotateAvatar();
+		});
+	},
 
-/**
- * Add down arrow to navigate in main page
- */
-function setupNavArrow() {
-	$('.yummy-yam-arrow').html('⮛<br>⮛');
-}
+	/**
+	 * Rotate avatar on expend navbar
+	 */
+	rotateAvatar: function() {
 
-/**
- * Setup avatar rotations:
- * 	- on click on navbar button
- * 	- on mouse over
- */
-function setupAvatarRotations() {
-
-	$(AVATAR_IMAGE).mouseenter(function () {	// mouse entre: rotate avatar
-		$(AVATAR_IMAGE).css('rotate', `-${ROTATION_ANGLE}`);
-	});
-
-	$(AVATAR_IMAGE).mouseout(function () {	// mouse out: reset avatar rotation
-		$(AVATAR_IMAGE).css('rotate', '0deg');
-	});
-
-	$('.banner .button').click(function () {	// on click on navbar button
-		rotateAvatar();
-	});
-}
-
-/**
- * Rotate avatar on expend navbar
- */
-function rotateAvatar() {
-
-	if (avatarIsRotated) {
-		$(AVATAR_IMAGE).css('rotate', '0deg');	// reset avatar rotation
-		avatarIsRotated = false;
-	} else {
-		$(AVATAR_IMAGE).css('rotate', `+${ROTATION_ANGLE}`);	// rotate avatar
-		avatarIsRotated = true;
-	}
-}
-
-/**
- * Fade out navbar after scroll down.
- * Fade in navbar if scroll to top page. 
- */
-function scrollFunction() {
-
-	const header = $('header');
-
-	var scroll = $(window).scrollTop();
-
-	if (false == headerIsHide && scroll > HEADER_HEIGHT) {
-		headerIsHide = true;
-		header.fadeOut(500);
-	} else {
-		if(true == headerIsHide && scroll <= HEADER_HEIGHT) {
-			headerIsHide = false;
-			header.fadeIn(500);
+		if (avatarIsRotated) {
+			$(AVATAR_IMAGE).css('rotate', '0deg');	// reset avatar rotation
+			avatarIsRotated = false;
+		} else {
+			$(AVATAR_IMAGE).css('rotate', `+${ROTATION_ANGLE}`);	// rotate avatar
+			avatarIsRotated = true;
 		}
-	}
+	},
 
-	scroll += $(window).height();
+	/**
+	 * Fade out navbar after scroll down.
+	 * Fade in navbar if scroll to top page. 
+	 */
+	scrollHeaderFunction: function() {
 
-	if (true == technologiesAreHide && scroll >= TECHNOLOGIES_TOP) {
-		var indexLanguages = 0;
-		var indexTools = 0;
-		(function showTechnologies() {
-			$(`.languages .hide`).eq(indexLanguages++).fadeIn(300, showTechnologies);
-		})();
-		(function showTechnologies() {
-			$(`.tools .hide`).eq(indexTools++).fadeIn(300, showTechnologies);
-		})();
-		technologiesAreHide = false;
-	}
-}
+		const header = $('header');
 
+		var scroll = $(window).scrollTop();
+
+		if (false == headerIsHide && scroll > HEADER_HEIGHT) {
+			headerIsHide = true;
+			header.fadeOut(500);
+		} else {
+			if(true == headerIsHide && scroll <= HEADER_HEIGHT) {
+				headerIsHide = false;
+				header.fadeIn(500);
+			}
+		}
+	},
+
+};
