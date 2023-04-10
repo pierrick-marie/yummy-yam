@@ -1,0 +1,42 @@
+baseURL = 'https://my-web-site.io/'
+languageCode = 'fr-FR'
+title = 'Web site title'
+theme = 'yummy-yam'
+
+disableKinds = ["taxonomy", "term", "RSS"]
+
+enableRobotsTXT = true
+
+contentDir = 'content'
+
+paginate = 4
+
+[params]
+	author = "Author"
+	subtitle = "Subtitle"
+	description = "Web site description"
+	keywords = "key, words"
+	customJS = "custom-js.js"
+	timeFormat = "french"
+
+[menu]
+	[[menu.main]]
+		name = 'Projets'
+		url = '#projects'
+		weight = 1
+	[[menu.main]]
+		name = 'Technologies'
+		url = '#technologies'
+		weight = 2
+	[[menu.main]]
+		name = 'Contacts'
+		url = '#contacts'
+		weight = 3
+	[[menu.main]]
+		name = 'Articles publiés'
+		url = 'posts'
+		weight = 4
+
+[sitemap]
+	changefreq = 'monthly'
+	filename = 'sitemap.xml'
