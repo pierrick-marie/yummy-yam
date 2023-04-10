@@ -16,6 +16,9 @@ $padding: 2em;
 	@media screen and #{$tab-and-laptop} {
 		width: 60%;
 	}
+	@media screen and #{$tv} {
+		padding-bottom: 10em;
+	}
 
 	.article-title {
 		padding-top: 1em;
@@ -31,6 +34,7 @@ $padding: 2em;
 
 		margin-bottom: 1em;
 		text-align: justify;
+		font-size: 1em;
 
 		img {
 			width: 40%;
@@ -65,7 +69,12 @@ $padding: 2em;
 		}
 	}
 
+	em {
+		font-size: 1em; 
+	}
+
 	li {
+		font-size: 1em;
 		text-align: left;
 	}
 
