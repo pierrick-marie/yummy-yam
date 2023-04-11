@@ -35,17 +35,13 @@
 		</div>
 
 		<div class="flex-container right">
-
+			<a class="home" href="{{ $.Site.BaseURL }}about">
 			{{ if ( eq .Site.Params.language "french" ) }}
-			<a class="home" href="{{ $.Site.BaseURL }}/about">
 				<h1 class="title">À propos</h1>
-			</a>
 			{{ else }}
-			<a class="home" href="{{ $.Site.BaseURL }}/about">
 				<h1 class="title">About</h1>
-			</a>
 			{{ end }}
-
+			</a>
 		</div>
 	</nav>
 
