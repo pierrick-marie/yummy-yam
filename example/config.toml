@@ -1,4 +1,4 @@
-baseURL = ''
+baseURL = 'http://my-site.io'
 languageCode = 'fr-FR'
 title = 'Web site title'
 theme = 'yummy-yam'

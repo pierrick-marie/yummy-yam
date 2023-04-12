@@ -27,13 +27,17 @@ $padding: 2em;
 	}
 
 	.article-title {
-		padding-top: 1em;
+		padding-top: 1.5em;
 		margin-bottom: 1em;
 		text-align: center;
 
 		@media screen and #{$tv} {
 			padding-top: 2em;
 		}
+	}
+
+	.article-content {
+		padding-top: 2em;
 	}
 
 	p {
@@ -69,12 +73,12 @@ $padding: 2em;
 	.feature-image {
 
 		.image {
-			width: 30%;
+			width: 25%;
 			height: auto;
 
 			float: left;
 
-			margin-right: 1.5em;
+			margin-right: 2em;
 
 			border-radius: 5px;
 			box-shadow: 0 0 15px $dark;
@@ -85,6 +89,10 @@ $padding: 2em;
 				margin-bottom: 3em;
 			}
 		}
+	}
+
+	ol, ul, dl {
+		display: block;
 	}
 
 	em {
