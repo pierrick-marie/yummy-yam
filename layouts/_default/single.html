@@ -13,7 +13,11 @@
 			<h1 class="article-title">{{ .Title }}</h1>
 
 			{{ if .Params.FeatureImage }}
-				<img class="feature-image" alt="{{ .Title }}" src="{{ .Params.FeatureImage }}">
+				<figure class="feature-image">
+					<a href="{{ .Params.FeatureImage }}" alt="{{ .Title }}">
+						<img class="image" alt="{{ .Title }}" src="{{ .Params.FeatureImage }}">
+					</a>
+				</figure>
 			{{ end }}
 
 			{{ .Content }}

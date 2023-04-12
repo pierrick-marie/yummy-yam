@@ -42,46 +42,48 @@ $padding: 2em;
 		text-align: justify;
 		font-size: 1em;
 
-		img {
-			width: 40%;
-			height: auto;
-
-			float: left;
-
-			margin-right: $padding;
-
-			border-radius: 5px;
-			box-shadow: 0 0 15px $dark;
-
-			@media screen and #{$phone} {
-				width: 55%;
-			}
-
-			@media screen and #{$tablet} {
-				width: 60%;
-			}
-		}
-
 		a {
 			@extend .link;
 		}
 	}
 
+	.figure {
+
+		text-align: center;
+		width: 100%;
+
+		.image {
+			width: 95%;
+			height: auto;
+
+			border-radius: 5px;
+			box-shadow: 0 0 15px $dark;
+		}
+
+		.caption {
+			font-size: 0.8em;
+			padding-top: 0.5em;
+		}
+	}
+
 	.feature-image {
-		width: 30%;
-		height: auto;
 
-		float: left;
+		.image {
+			width: 30%;
+			height: auto;
 
-		margin-right: 1.5em;
+			float: left;
 
-		border-radius: 5px;
-		box-shadow: 0 0 15px $dark;
+			margin-right: 1.5em;
 
-		@media screen and #{$tv} {
-			width: 20%;
-			margin-right: 3em;
-			margin-bottom: 3em;
+			border-radius: 5px;
+			box-shadow: 0 0 15px $dark;
+
+			@media screen and #{$tv} {
+				width: 20%;
+				margin-right: 3em;
+				margin-bottom: 3em;
+			}
 		}
 	}
 
